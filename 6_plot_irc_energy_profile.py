@@ -230,7 +230,7 @@ def main():
     plt.title(f"IRC Energy Profile ({stem}_IRC)")
     plt.grid(True, linestyle="--", alpha=0.6)
     plt.tight_layout()
-    plt.savefig(png_path, dpi=180)
+    plt.savefig(png_path, dpi=300)
     print(f"Wrote plot: {png_path}")
 
 
