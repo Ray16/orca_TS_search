@@ -4,6 +4,7 @@ import re
 
 import matplotlib.pyplot as plt
 import pandas as pd
+from matplotlib.ticker import MaxNLocator
 
 from workflow_utils import resolve_system_dir
 
@@ -67,9 +68,11 @@ def analyze_and_plot(df, output_csv, output_plot):
             print(f"Found imaginary frequency: {row['Frequency']} cm^-1 at index {row['Index']}")
 
     plt.axhline(0, color='black', linewidth=0.8)
+    plt.ylim(bottom=-1000)
     plt.xlabel('Mode Index')
     plt.ylabel('Frequency (cm^-1)')
     plt.title('ORCA Vibrational Frequency Analysis')
+    plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
     plt.legend()
     plt.grid(True, linestyle='--', alpha=0.7)
     
