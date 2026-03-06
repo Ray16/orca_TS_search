@@ -1,4 +1,4 @@
-# ORCA TS/IRC Workflow
+# ORCA TS search/IRC Workflow
 
 Performing transition state search and intrinsic reaction calculation on UChicago RCC cluster.
 
