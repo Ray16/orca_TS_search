@@ -101,8 +101,8 @@ def main():
         default=None,
         help="Optional root directory (defaults to script directory).",
     )
-    parser.add_argument("--charge", type=int, default=-1, help="Default charge for plain XYZ inputs.")
-    parser.add_argument("--mult", type=int, default=1, help="Default multiplicity for plain XYZ inputs.")
+    parser.add_argument("--charge", type=int, required=True, help="Charge for plain XYZ inputs.")
+    parser.add_argument("--mult", type=int, required=True, help="Multiplicity for plain XYZ inputs.")
     args = parser.parse_args()
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
