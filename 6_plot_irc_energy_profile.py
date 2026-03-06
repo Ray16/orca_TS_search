@@ -3,6 +3,7 @@ import os
 import re
 
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import pandas as pd
 
 
@@ -224,6 +225,7 @@ def main():
             bbox={"facecolor": "white", "edgecolor": "crimson", "alpha": 0.9, "boxstyle": "round,pad=0.25"},
         )
     plt.xlabel("IRC Step")
+    plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
     plt.ylabel("Relative Energy (kcal/mol)")
     plt.title(f"IRC Energy Profile ({stem}_IRC)")
     plt.grid(True, linestyle="--", alpha=0.6)
