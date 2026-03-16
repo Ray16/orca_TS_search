@@ -2,6 +2,11 @@
 
 Transition state search and intrinsic reaction coordinate (IRC) calculation pipeline, designed for the UChicago RCC cluster using ORCA with GFN2-xTB.
 
+## Supported Reaction Families
+
+- **SN2**: 12 halide-exchange reactions (X⁻ + CH₃Y → CH₃X + Y⁻, where X, Y = F, Cl, Br, I)
+- **Diels-Alder**: 4 [4+2] cycloadditions (butadiene + CH₂=CHX, where X = F, Cl, Br, I)
+
 ## Environment Setup
 
 ```bash
@@ -9,11 +14,9 @@ module load orca
 pip install pandas matplotlib numpy
 ```
 
-## Input Preparation
+## Input Preparation (optional)
 
-Place an initial TS guess structure in the `TS_guess_xyz/` folder as `<system>_input.xyz`.
-
-If you don't have a guess structure, generate one first:
+Initial TS guess structures are provided in `TS_guess_xyz/` as `<system>_input.xyz`. If you need to regenerate them:
 
 ```bash
 # SN2 systems
@@ -23,29 +26,21 @@ python 0_prep_initial_TS_structure.py --nuc <nucleophile> --lg <leaving_group>
 python 0_prep_initial_TS_structure.py --family da
 ```
 
-This creates the xyz file automatically for SN2 or Diels-Alder systems.
-
 ## Running the Workflow
 
-### Option A: All-in-one (recommended)
-
-Runs all systems through the full pipeline automatically:
+Run the full pipeline for all systems in a reaction family:
 
 ```bash
-# SN2 systems (12 halide-exchange reactions)
+# SN2 systems (~5 min total)
 bash run_all_sn2_pipeline.sh
 
-# Diels-Alder systems (butadiene + CH2=CHX, X = F, Cl, Br, I)
+# Diels-Alder systems (~2 min total)
 bash run_all_da_pipeline.sh
 ```
 
-Each script handles: TS optimization → IRC → reactant/product geometry opt → ΔH → Polanyi analysis.
+Each script handles: TS optimization → IRC → reactant/product geometry opt → ΔH → Polanyi analysis. Outputs (plots, reports) are written to `output/`.
 
----
-
-### Option B: Step-by-step (single system)
-
-Use this for more control or when working on one system at a time. Replace `[system]` with the system name (e.g. `sn2_cl_br`).
+To run individual systems step by step, replace `[system]` with the system name (e.g. `sn2_cl_br`, `da_i`):
 
 ```bash
 # 1. Prepare TS search input
@@ -78,20 +73,6 @@ python 9_compute_deltaH.py [system]
 # 10. Polanyi analysis (run after multiple systems are complete)
 python 10_polanyi_analysis.py
 ```
-
-Outputs (plots, reports) are written to `output/`.
-
-## Evans-Polanyi Results
-
-The Polanyi analysis fits Ea vs ΔH separately for each reaction family, since Evans-Polanyi applies within analogous reactions:
-
-- **SN2**: `output/sn2_polanyi_plot.png` — 12 halide-exchange reactions (R² = 0.78)
-- **Diels-Alder**: `output/da_polanyi_plot.png` — 4 dienophile substituents F, Cl, Br, I (R² = 0.88)
-
-![SN2 Polanyi](output/sn2_polanyi_plot.png)
-![DA Polanyi](output/da_polanyi_plot.png)
-
----
 
 ## Notes
 
