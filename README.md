@@ -6,8 +6,8 @@ The pipeline automates transition state (TS) search, intrinsic reaction coordina
 
 ## Reaction Families
 
-- **SN2**: 12 halide-exchange reactions (X⁻ + CH₃Y → CH₃X + Y⁻, where X, Y = F, Cl, Br, I). In the system name `sn2_{nuc}_{lg}`, the first halogen is the nucleophile (X) and the second is the leaving group (Y).
-- **Diels-Alder**: 4 [4+2] cycloadditions (butadiene + CH₂=CHX, where X = F, Cl, Br, I)
+- **SN2**: 12 halide-exchange reactions (X⁻ + CH₃Y → CH₃X + Y⁻, where X, Y = F, Cl, Br, I). In the system name `sn2_{nuc}_{lg}`, the first halogen is the nucleophile (nuc, X) and the second is the leaving group (lg, Y).
+- **Diels-Alder**: 4 [4+2] cycloadditions (1,3-butadiene + CH₂=CHX → 4-X-cyclohex-2-ene, where X = F, Cl, Br, I). In the system name `da_{X}`, the halogen is the substituent on the dienophile.
 
 ## Environment Setup
 
