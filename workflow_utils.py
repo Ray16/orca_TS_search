@@ -34,8 +34,14 @@ def resolve_system_name(system_arg, root_dir):
 
 def resolve_system_dir(system_arg, root_dir):
     system_name = resolve_system_name(system_arg, root_dir)
-    target_dir = system_name if os.path.isabs(system_name) else os.path.join(root_dir, system_name)
-    target_dir = os.path.abspath(target_dir)
+    if os.path.isabs(system_name):
+        target_dir = system_name
+    else:
+        target_dir = os.path.abspath(os.path.join(root_dir, system_name))
+        if not os.path.isdir(target_dir):
+            runs_candidate = os.path.abspath(os.path.join(root_dir, "runs", system_name))
+            if os.path.isdir(runs_candidate):
+                target_dir = runs_candidate
     if not os.path.isdir(target_dir):
         raise SystemExit(f"Error: target directory not found: {target_dir}")
     return target_dir

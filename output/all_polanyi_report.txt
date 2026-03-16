@@ -1,0 +1,29 @@
+Evans-Polanyi Analysis (GFN2-xTB / ORCA)
+=======================================================
+
+System              Ea (kcal/mol)  dH (kcal/mol)
+------------------------------------------------
+da_br                       21.83          -6.71
+da_cl                       22.62          -5.57
+da_f                        21.46          -7.88
+da_i                        22.35          -6.56
+sn2_br_cl                    8.14           2.56
+sn2_br_f                     0.48         -29.20
+sn2_br_i                     3.70          -0.18
+sn2_cl_br                    8.14           2.56
+sn2_cl_f                     1.89         -26.86
+sn2_cl_i                     7.97           3.48
+sn2_f_br                    29.67          29.19
+sn2_f_cl                    28.75          26.86
+sn2_f_i                     -0.09         -30.13
+sn2_i_br                     3.78          -0.10
+sn2_i_cl                     7.97           3.47
+sn2_i_f                     -0.09         -30.12
+
+Evans-Polanyi fit: Ea = 13.71 + 0.409 * dH
+R^2 = 0.4676
+Alpha (Bronsted coefficient) = 0.409
+E0 (intrinsic barrier) = 13.71 kcal/mol
+
+Alpha is between 0 and 1 as expected by Evans-Polanyi theory.
+Weak correlation (R^2 = 0.4676): Polanyi relation may not hold well at this level of theory.

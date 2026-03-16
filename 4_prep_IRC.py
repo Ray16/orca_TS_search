@@ -5,6 +5,8 @@ import shlex
 import subprocess
 import sys
 
+from workflow_utils import resolve_system_name
+
 
 def find_ts_base(data_dir, base_name=None):
     if base_name:
@@ -61,6 +63,17 @@ def parse_nprocs(inp_path):
 
 
 def build_irc_input(base, charge, mult, nprocs, method, basis, maxiter, rel_data_dir):
+    if method.upper() == "XTB2":
+        return (
+            f"! XTB2 IRC PAL8\n\n"
+            f"%irc\n"
+            f"  Direction both\n"
+            f"  MaxIter {maxiter}\n"
+            f"  InitHess read\n"
+            f"  Hess_Filename \"{rel_data_dir}/{base}.hess\"\n"
+            f"end\n\n"
+            f"* xyzfile {charge} {mult} {rel_data_dir}/{base}.xyz\n"
+        )
     return (
         f"! {method} {basis} TightSCF IRC\n\n"
         f"%pal\n"
@@ -117,46 +130,36 @@ def main():
         default=None,
         help="Base filename for TS files without extension",
     )
-    parser.add_argument("--method", default="B3LYP")
-    parser.add_argument("--basis", default="def2-SVP")
-    parser.add_argument("--maxiter", type=int, default=70)
+    parser.add_argument("--method", default="XTB2")
+    parser.add_argument("--basis", default="")
+    parser.add_argument("--maxiter", type=int, default=20)
     parser.add_argument("--run", action="store_true", help="Run ORCA after writing the IRC input.")
     parser.add_argument(
         "--orca-cmd",
         default="orca",
         help='ORCA executable command, e.g. "orca" or "/path/to/orca".',
     )
+    parser.add_argument(
+        "--root",
+        default=None,
+        help="Root runs directory (parent of system directories). Defaults to <script_dir>/runs.",
+    )
     args = parser.parse_args()
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    def resolve_system_name(system_arg, root_dir):
-        if system_arg:
-            return system_arg
-        guess_dir = os.path.join(root_dir, "TS_guess_xyz")
-        pattern = "_input.xyz"
-        candidates = []
-        if os.path.isdir(guess_dir):
-            candidates = sorted(
-                f[: -len(pattern)]
-                for f in os.listdir(guess_dir)
-                if f.endswith(pattern)
-            )
-        if len(candidates) == 1:
-            print(f"Auto-detected system from TS_guess_xyz: {candidates[0]}")
-            return candidates[0]
-        if len(candidates) > 1:
-            print("Error: multiple *_input.xyz files found in TS_guess_xyz; pass system explicitly.")
-            print("Candidates: " + ", ".join(candidates))
-            return 1
-        print("Error: no *_input.xyz found in TS_guess_xyz; pass system explicitly.")
-        return 1
-
     system_name = resolve_system_name(args.system, script_dir)
-    if system_name == 1:
-        return 1
-    target_dir = system_name if os.path.isabs(system_name) else os.path.join(script_dir, system_name)
-    target_dir = os.path.abspath(target_dir)
+    if os.path.isabs(system_name):
+        target_dir = system_name
+    else:
+        # If --root is given, look there first; otherwise fall back to script_dir/runs/
+        root_dir = os.path.abspath(args.root) if args.root else os.path.join(script_dir, "runs")
+        target_dir = os.path.abspath(os.path.join(root_dir, system_name))
+        if not os.path.isdir(target_dir):
+            # Legacy fallback: system dir directly under script_dir
+            fallback = os.path.abspath(os.path.join(script_dir, system_name))
+            if os.path.isdir(fallback):
+                target_dir = fallback
     if not os.path.isdir(target_dir):
         print(f"Error: target directory not found: {target_dir}")
         return 1
@@ -174,7 +177,10 @@ def main():
     charge, mult = parse_charge_mult(ts_inp)
     nprocs = parse_nprocs(ts_inp)
 
-    required = [f"{base}.xyz", f"{base}.hess", f"{base}.gbw"]
+    if args.method.upper() == "XTB2":
+        required = [f"{base}.xyz"]
+    else:
+        required = [f"{base}.xyz", f"{base}.hess", f"{base}.gbw"]
     missing = [f for f in required if not os.path.exists(os.path.join(data_dir, f))]
     if missing:
         print(f"Error: missing required TS files in {data_dir}: {', '.join(missing)}")

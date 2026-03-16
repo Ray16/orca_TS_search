@@ -5,15 +5,16 @@ import sys
 from workflow_utils import resolve_system_name
 
 
-TEMPLATE_HEADER = """! B3LYP def2-SVP OptTS Freq
-
-%pal
-  nprocs 1
-end
+# XTB2 (GFN2-xTB): Fast semi-empirical method, suitable for TS search + IRC
+# within a couple of minutes even for systems with heavy atoms like Iodine.
+# Freq is combined with OptTS so that enthalpy H(TS) is available for Polanyi analysis.
+TEMPLATE_HEADER = """! XTB2 OptTS Freq PAL8
 
 %geom
   Calc_Hess true
-  Recalc_Hess 5
+  Recalc_Hess 3
+  MaxIter 200
+  Trust -0.1
 end
 
 """
@@ -76,6 +77,34 @@ def build_input_text(xyz_block):
     return TEMPLATE_HEADER + xyz_block
 
 
+def list_systems_from_ts_guess(root_dir):
+    guess_dir = os.path.join(root_dir, "TS_guess_xyz")
+    pattern = "_input.xyz"
+    if not os.path.isdir(guess_dir):
+        raise ValueError("TS_guess_xyz directory not found.")
+    candidates = sorted(
+        f[: -len(pattern)] for f in os.listdir(guess_dir) if f.endswith(pattern)
+    )
+    if not candidates:
+        raise ValueError("No *_input.xyz files found in TS_guess_xyz.")
+    return candidates
+
+
+def read_systems_file(path):
+    if not os.path.exists(path):
+        raise ValueError(f"Systems file not found: {path}")
+    systems = []
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            systems.append(line)
+    if not systems:
+        raise ValueError("No systems found in systems file.")
+    return systems
+
+
 def main():
     parser = argparse.ArgumentParser(
         description=(
@@ -87,6 +116,16 @@ def main():
         nargs="?",
         default=None,
         help="System name, e.g., sn2 (optional if TS_guess_xyz has exactly one *_input.xyz).",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Generate inputs for all *_input.xyz files in TS_guess_xyz.",
+    )
+    parser.add_argument(
+        "--systems-file",
+        default=None,
+        help="Path to a file listing system names (one per line).",
     )
     parser.add_argument(
         "--xyz-file",
@@ -108,22 +147,33 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     root = args.root if args.root else script_dir
     root = os.path.abspath(root)
-    system_name = resolve_system_name(args.system, root)
+    if args.system and (args.all or args.systems_file):
+        raise ValueError("Use either a single system or --all/--systems-file, not both.")
+    if (args.all or args.systems_file) and (args.xyz_file or args.xyz_block):
+        raise ValueError("--xyz-file/--xyz-block cannot be used with --all/--systems-file.")
 
-    system_dir = os.path.join(root, system_name)
-    out_dir = os.path.join(system_dir, "TS_search")
-    out_name = f"{system_name}.inp"
-    out_path = os.path.join(out_dir, out_name)
-    xyz_guess_path = os.path.join(root, "TS_guess_xyz", f"{system_name}_input.xyz")
+    if args.all:
+        system_names = list_systems_from_ts_guess(root)
+    elif args.systems_file:
+        system_names = read_systems_file(args.systems_file)
+    else:
+        system_names = [resolve_system_name(args.system, root)]
 
-    xyz_block = read_xyz_block(args, xyz_guess_path)
-    text = build_input_text(xyz_block)
+    for system_name in system_names:
+        system_dir = os.path.join(root, system_name)
+        out_dir = os.path.join(system_dir, "TS_search")
+        out_name = f"{system_name}.inp"
+        out_path = os.path.join(out_dir, out_name)
+        xyz_guess_path = os.path.join(root, "TS_guess_xyz", f"{system_name}_input.xyz")
 
-    os.makedirs(out_dir, exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as f:
-        f.write(text)
+        xyz_block = read_xyz_block(args, xyz_guess_path)
+        text = build_input_text(xyz_block)
 
-    print(f"Wrote: {out_path}")
+        os.makedirs(out_dir, exist_ok=True)
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(text)
+
+        print(f"Wrote: {out_path}")
 
 
 if __name__ == "__main__":

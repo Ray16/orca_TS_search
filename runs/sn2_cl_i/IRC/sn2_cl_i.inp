@@ -1,0 +1,8 @@
+! XTB2 IRC PAL8
+
+%irc
+  Direction both
+  MaxIter 20
+end
+
+* xyzfile -1 1 ../TS_search/sn2_cl_i.xyz

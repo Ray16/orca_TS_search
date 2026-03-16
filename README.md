@@ -1,28 +1,102 @@
-# ORCA TS search/IRC Workflow
+# ORCA TS Search / IRC Workflow
 
-Performing transition state search and intrinsic reaction calculation on UChicago RCC cluster.
+Transition state search and intrinsic reaction coordinate (IRC) calculation pipeline, designed for the UChicago RCC cluster using ORCA with GFN2-xTB.
 
 ## Environment Setup
-- Make sure you have `pandas` and `matplotlib` Python packages installed via pip (e.g. `pip install pandas matplotlib`).
-- Make sure orca is loaded via `module load orca`
-
-## Input Preparetion
-Place an initial guess for the transition state structure under `TS_guess_xyz` folder (xyz format), name it as `<sys_name>_input.xyz`, where `<sys_name>` is the name of the system.
-
-## TS search and IRC
 
 ```bash
-python 1_prep_TS_search.py [system] --charge [charge] --mult [multiplicity]
-bash 2_submit_TS_search.sh [system]
-python 3_frequency_analysis.py [system]
-python 4_prep_IRC.py [system]
-bash 5_submit_IRC.sh [system]
-python 6_plot_irc_energy_profile.py [system]
+module load orca
+pip install pandas matplotlib numpy
 ```
 
+## Input Preparation
+
+Place an initial TS guess structure in the `TS_guess_xyz/` folder as `<system>_input.xyz`.
+
+If you don't have a guess structure, generate one first:
+
+```bash
+# SN2 systems
+python 0_prep_initial_TS_structure.py --nuc <nucleophile> --lg <leaving_group>
+
+# Diels-Alder systems
+python 0_prep_initial_TS_structure.py --family da
+```
+
+This creates the xyz file automatically for SN2 or Diels-Alder systems.
+
+## Running the Workflow
+
+### Option A: All-in-one (recommended)
+
+Runs all systems through the full pipeline automatically:
+
+```bash
+# SN2 systems (12 halide-exchange reactions)
+bash run_all_sn2_pipeline.sh
+
+# Diels-Alder systems (butadiene + CH2=CHX, X = F, Cl, Br, I)
+bash run_all_da_pipeline.sh
+```
+
+Each script handles: TS optimization → IRC → reactant/product geometry opt → ΔH → Polanyi analysis.
+
+---
+
+### Option B: Step-by-step (single system)
+
+Use this for more control or when working on one system at a time. Replace `[system]` with the system name (e.g. `sn2_cl_br`).
+
+```bash
+# 1. Prepare TS search input
+python 1_prep_TS_search.py [system] --charge <charge> --mult <multiplicity>
+
+# 2. Run TS optimization + frequency calculation
+bash 2_submit_TS_search.sh [system]
+
+# 3. Analyze frequencies (checks for imaginary mode)
+python 3_frequency_analysis.py [system]
+
+# 4. Prepare IRC input from TS result
+python 4_prep_IRC.py [system]
+
+# 5. Run IRC
+bash 5_submit_IRC.sh [system]
+
+# 6. Plot IRC energy profile
+python 6_plot_irc_energy_profile.py [system]
+
+# 7. Prepare reactant/product geometry optimization inputs
+python 7_prep_geo_opt_reactant_product.py [system]
+
+# 8. Run reactant/product opt + frequency
+bash 8_submit_geo_opt_reactant_product.sh [system]
+
+# 9. Compute reaction enthalpy (ΔH)
+python 9_compute_deltaH.py [system]
+
+# 10. Polanyi analysis (run after multiple systems are complete)
+python 10_polanyi_analysis.py
+```
+
+Outputs (plots, reports) are written to `output/`.
+
+## Evans-Polanyi Results
+
+The Polanyi analysis fits Ea vs ΔH separately for each reaction family, since Evans-Polanyi applies within analogous reactions:
+
+- **SN2**: `output/sn2_polanyi_plot.png` — 12 halide-exchange reactions (R² = 0.78)
+- **Diels-Alder**: `output/da_polanyi_plot.png` — 4 dienophile substituents F, Cl, Br, I (R² = 0.88)
+
+![SN2 Polanyi](output/sn2_polanyi_plot.png)
+![DA Polanyi](output/da_polanyi_plot.png)
+
+---
+
 ## Notes
-- [charge] and [multiplicity] should be manually set for the system. For example, for the following SN2 reaction:
-F⁻ + CH₃F → [F···CH₃···F]⁻ → CH₃F + F⁻  
-charge should be -1 and multiplicity should be 1 (singlet, all electrons paired). Multiplicity is set by counting the number of unpaired electrons in the system and using the formula multiplicity = 2S + 1, where S is the total spin (½ per unpaired electron), so a closed-shell system with no unpaired electrons has multiplicity = 1 (singlet).
-- `system` is optional for steps `1/3/4/6` if `TS_guess_xyz` contains exactly one `*_input.xyz`.
-- Steps `3` and `6` write outputs to `output/`.
+
+- **`[system]`** is optional for steps 1, 3, 4, and 6 if `TS_guess_xyz/` contains exactly one `*_input.xyz` file.
+- **Charge and multiplicity** must be set correctly:
+  - **SN2**: e.g., F⁻ + CH₃Cl → CH₃F + Cl⁻: charge = `-1`, multiplicity = `1`.
+  - **Diels-Alder**: e.g., butadiene + CH₂=CHI: charge = `0`, multiplicity = `1`.
+- **Step 3** confirms the TS has exactly one imaginary frequency — if not, the TS guess or optimization needs to be revisited before proceeding.

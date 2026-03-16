@@ -1,0 +1,17 @@
+Evans-Polanyi Analysis (GFN2-xTB / ORCA)
+=======================================================
+
+System              Ea (kcal/mol)  dH (kcal/mol)
+------------------------------------------------
+da_br                       21.83          -6.71
+da_cl                       22.62          -5.57
+da_f                        21.46          -7.88
+da_i                        22.35          -6.56
+
+Evans-Polanyi fit: Ea = 25.50 + 0.514 * dH
+R^2 = 0.8765
+Alpha (Bronsted coefficient) = 0.514
+E0 (intrinsic barrier) = 25.50 kcal/mol
+
+Alpha is between 0 and 1 as expected by Evans-Polanyi theory.
+Good linear correlation (R^2 = 0.8765): Polanyi relation holds.

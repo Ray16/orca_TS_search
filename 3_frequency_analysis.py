@@ -125,6 +125,73 @@ def resolve_input_file(target_dir, explicit_input=None):
         print(f"Multiple .out files found in {target_dir}; using {os.path.basename(candidates[0])}")
     return candidates[0]
 
+
+def list_systems_from_ts_guess(root_dir):
+    guess_dir = os.path.join(root_dir, "TS_guess_xyz")
+    pattern = "_input.xyz"
+    if not os.path.isdir(guess_dir):
+        print("Error: TS_guess_xyz directory not found; pass system explicitly.")
+        return None
+    candidates = sorted(
+        f[: -len(pattern)] for f in os.listdir(guess_dir) if f.endswith(pattern)
+    )
+    if not candidates:
+        print("Error: no *_input.xyz found in TS_guess_xyz; pass system explicitly.")
+        return None
+    return candidates
+
+
+SN2_ORDER = [
+    "sn2_f_cl", "sn2_f_br", "sn2_f_i",
+    "sn2_cl_f", "sn2_cl_br", "sn2_cl_i",
+    "sn2_br_f", "sn2_br_cl", "sn2_br_i",
+    "sn2_i_f",  "sn2_i_cl", "sn2_i_br",
+]
+
+
+def plot_combined_frequencies(systems_data, output_path, nrows, ncols, title):
+    """systems_data: list of (sysname, df) tuples in row-major order."""
+    fig, axes = plt.subplots(nrows, ncols, figsize=(4.5 * ncols, 3.5 * nrows))
+    axes_flat = [ax for row in (axes if nrows > 1 else [axes]) for ax in (row if ncols > 1 else [row])]
+
+    for idx, (sysname, df) in enumerate(systems_data):
+        ax = axes_flat[idx]
+        if df is None or df.empty:
+            ax.set_visible(False)
+            continue
+
+        imaginary = df[df["Frequency"] < 0]
+        real = df[df["Frequency"] >= 0]
+
+        if not real.empty:
+            ax.stem(real["Index"], real["Frequency"],
+                    linefmt="b-", markerfmt="bo", basefmt="k-", label="Real")
+        if not imaginary.empty:
+            ax.stem(imaginary["Index"], imaginary["Frequency"],
+                    linefmt="r-", markerfmt="ro", basefmt="k-", label="Imag")
+            for _, row in imaginary.iterrows():
+                ax.annotate(f"{row['Frequency']:.0f}", (row["Index"], row["Frequency"]),
+                            textcoords="offset points", xytext=(0, -12),
+                            ha="center", color="red", fontsize=7, weight="bold")
+
+        ax.axhline(0, color="black", linewidth=0.8)
+        short = re.sub(r"^(sn2|da)_", "", sysname).replace("_", u"\u2192")
+        ax.set_title(short, fontsize=9, fontweight="bold")
+        ax.set_xlabel("Mode", fontsize=7)
+        ax.set_ylabel("cm\u207b\u00b9", fontsize=7)
+        ax.tick_params(labelsize=6)
+        ax.grid(True, linestyle="--", alpha=0.5)
+
+    for idx in range(len(systems_data), nrows * ncols):
+        axes_flat[idx].set_visible(False)
+
+    fig.suptitle(title, fontsize=13, fontweight="bold")
+    fig.tight_layout()
+    fig.savefig(output_path, dpi=200)
+    print(f"Combined frequency plot saved: {output_path}")
+    plt.close(fig)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Extract ORCA vibrational frequencies and generate CSV/plot outputs."
@@ -141,23 +208,61 @@ def main():
         default=None,
         help="Optional input .out filename (relative to system) or absolute path.",
     )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Process all systems listed by *_input.xyz in TS_guess_xyz.",
+    )
+    parser.add_argument(
+        "--combined",
+        action="store_true",
+        help="Save one combined subplot figure per family instead of individual plots.",
+    )
     args = parser.parse_args()
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    target_dir = resolve_system_dir(args.system, script_dir)
-    sysname = os.path.basename(os.path.normpath(target_dir))
-
-    input_file = resolve_input_file(target_dir, args.input_file)
-    if input_file is None:
+    if args.all and args.system:
+        print("Error: use either --all or a specific system, not both.")
         return 1
+
+    systems = None
+    if args.all:
+        systems = list_systems_from_ts_guess(script_dir)
+        if not systems:
+            return 1
+    else:
+        systems = [args.system]
 
     output_dir = os.path.join(script_dir, "output")
     os.makedirs(output_dir, exist_ok=True)
-    csv_file = os.path.join(output_dir, f"{sysname}_frequencies.csv")
-    plot_file = os.path.join(output_dir, f"{sysname}_frequency_plot.png")
 
-    df = extract_frequencies(input_file)
-    analyze_and_plot(df, csv_file, plot_file)
+    # Collect (sysname, df) for all systems regardless of combined mode
+    collected = []
+    for system in systems:
+        target_dir = resolve_system_dir(system, script_dir)
+        sysname = os.path.basename(os.path.normpath(target_dir))
+        input_file = resolve_input_file(target_dir, args.input_file)
+        if input_file is None:
+            continue
+        df = extract_frequencies(input_file)
+        csv_file = os.path.join(output_dir, f"{sysname}_frequencies.csv")
+        if df is not None and not df.empty:
+            df.to_csv(csv_file, index=False)
+            print(f"Frequencies saved to {csv_file}")
+        collected.append((sysname, df))
+
+    if args.combined:
+        sn2_data = [(s, d) for s, d in collected if s in SN2_ORDER]
+        sn2_data.sort(key=lambda x: SN2_ORDER.index(x[0]) if x[0] in SN2_ORDER else 999)
+        if sn2_data:
+            plot_combined_frequencies(sn2_data, os.path.join(output_dir, "sn2_frequencies_combined.png"),
+                                      nrows=4, ncols=3, title="SN2 Vibrational Frequencies")
+    else:
+        for sysname, df in collected:
+            plot_file = os.path.join(output_dir, f"{sysname}_frequency_plot.png")
+            if df is not None and not df.empty:
+                analyze_and_plot(df, os.path.join(output_dir, f"{sysname}_frequencies.csv"), plot_file)
+
     return 0
 
 

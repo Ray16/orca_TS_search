@@ -1,0 +1,90 @@
+*************************************************
+******************* ORCA 6.1.0 ******************
+*************************************************
+$Calculation_Status
+   &GeometryIndex 0
+   &version [&Type "String"] "6.1.0"
+   &progName [&Type "String"] "orca"
+   &Status [&Type "String"] "NORMAL TERMINATION"
+$End
+$Geometry
+   &GeometryIndex 1
+   &NAtoms [&Type "Integer"] 6
+   &NCorelessECP [&Type "Integer"] 0
+   &NGhostAtoms [&Type "Integer"] 0
+   &CartesianCoordinates [&Type "Coordinates", &Dim(6,4), &Units "Bohr"] 
+              C      0.254954033202    0.147190408504   -0.459275643282
+              H      0.393726130177    2.170251302463   -0.162378734893
+              H      2.076343716866   -0.744201268785   -0.162388924922
+              H     -1.156888442037   -0.667919807332    0.800159703259
+              F     -0.995595718933   -0.574783330777    4.220147599105
+              Br    -0.572539719275   -0.330537304072   -4.076166401202
+$End
+$Single_Point_Data
+   &GeometryIndex 1
+   &FinalEnergy [&Type "Double"]      -1.2687984679039999e+01  "Final single point energy"
+   &Converged [&Type "Boolean"] true
+$End
+$Calculation_Info
+   &GeometryIndex 1
+   &Mult [&Type "Integer"] 1
+   &Charge [&Type "Integer"] -1
+   &NumOfAtoms [&Type "Integer"] 6
+   &NumOfElectrons [&Type "Integer"] 0
+   &NumOfBasisFuncts [&Type "Integer"] 0
+   &NumOfAuxCBasisFuncts [&Type "Integer"] 0
+   &NumOfAuxJBasisFuncts [&Type "Integer"] 0
+   &NumOfAuxJKBasisFuncts [&Type "Integer"] 0
+   &NumOfCABSBasisFuncts [&Type "Integer"] 0
+$End
+$THERMOCHEMISTRY_Energies
+   &GeometryIndex 1
+   &temperature [&Type "Double"]       2.9814999999999998e+02
+   &pressure [&Type "Double"]       1.0000000000000000e+00
+   &totalMass [&Type "Double"]       1.1393300000000001e+02
+   &spinDegeneracy [&Type "Integer"] 1
+   &elEnergy [&Type "Double"]      -1.2687984679039999e+01
+   &transEnergy [&Type "Double"]       1.4162714244859817e-03
+   &rotEnergy [&Type "Double"]       1.4162714244859817e-03
+   &vibEnergy [&Type "Double"]       1.5753137929638583e-03
+   &numOfFreqs [&Type "Integer"] 18
+   &freqScalingFactor [&Type "Double"]       1.0000000000000000e+00
+   &FREQ [&Type "ArrayOfDoubles", &Units "cm^-1", &Dim (18,1)] 
+                                                         0
+
+0                                      0.0000000000000000e+00
+1                                      0.0000000000000000e+00
+2                                      0.0000000000000000e+00
+3                                      0.0000000000000000e+00
+4                                      0.0000000000000000e+00
+5                                      0.0000000000000000e+00
+6                                     -1.5154452860752863e+02
+7                                      1.7147192474515379e+02
+8                                      1.9746581693558718e+02
+9                                      4.7377963307270943e+02
+10                                     7.6478268449121924e+02
+11                                     9.5378291011177589e+02
+12                                     1.2654323307553848e+03
+13                                     1.4129556766208543e+03
+14                                     1.4389699679769014e+03
+15                                     2.9080582706427617e+03
+16                                     3.0405445066280568e+03
+17                                     3.0502353359416456e+03
+   &zpe [&Type "Double"]       3.5715925302509402e-02
+   &innerEnergyU [&Type "Double"]      -1.2647860897095555e+01
+   &enthalpyH [&Type "Double"]      -1.2646916688053295e+01
+   &qEl [&Type "Double"]       0.0000000000000000e+00
+   &qRot [&Type "Double"]       1.1940340138799863e-02
+   &qVib [&Type "Double"]       2.7129255924414164e-03
+   &qTrans [&Type "Double"]       1.9055981088661803e-02
+   &entropyS [&Type "Double"]       3.3709246819903081e-02
+   &freeEnergyG [&Type "Double"]      -1.2680625934873198e+01
+   &isLinear [&Type "Boolean"] false
+$End
+$Calculation_Timings
+   &GeometryIndex 1
+   &FREQ_NUM [&Type "Double"]       2.3365689999999999e+00
+   &XTB [&Type "Double"]       1.6207571999999995e+01
+   &XTBGRAD [&Type "Double"]       1.5977999999996162e-02
+   &SUM [&Type "Double"]       1.8560118999999993e+01
+$End

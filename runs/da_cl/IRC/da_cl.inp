@@ -1,0 +1,10 @@
+! XTB2 IRC PAL8
+
+%irc
+  Direction both
+  MaxIter 20
+  InitHess read
+  Hess_Filename "../TS_search/da_cl.hess"
+end
+
+* xyzfile 0 1 ../TS_search/da_cl.xyz
