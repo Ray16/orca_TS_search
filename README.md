@@ -1,8 +1,10 @@
-# ORCA TS Search / IRC Workflow
+# Evans-Polanyi Principle Validation
 
-Transition state search and intrinsic reaction coordinate (IRC) calculation pipeline, designed for the UChicago RCC cluster using ORCA with GFN2-xTB.
+Computational validation of the [Evans-Polanyi principle](https://en.wikipedia.org/wiki/Evans%E2%80%93Polanyi_principle) — the linear relationship between activation energy (E_a) and reaction enthalpy (ΔH) within a family of analogous reactions — using quantum chemistry calculations at the GFN2-xTB level with ORCA.
 
-## Supported Reaction Families
+The pipeline automates transition state (TS) search, intrinsic reaction coordinate (IRC) calculation, and thermochemistry extraction to produce Evans-Polanyi correlation plots (E_a vs ΔH) for each reaction family.
+
+## Reaction Families
 
 - **SN2**: 12 halide-exchange reactions (X⁻ + CH₃Y → CH₃X + Y⁻, where X, Y = F, Cl, Br, I)
 - **Diels-Alder**: 4 [4+2] cycloadditions (butadiene + CH₂=CHX, where X = F, Cl, Br, I)
@@ -14,21 +16,9 @@ module load orca
 pip install pandas matplotlib numpy
 ```
 
-## Input Preparation (optional)
+## Quick Start
 
-Initial TS guess structures are provided in `TS_guess_xyz/` as `<system>_input.xyz`. If you need to regenerate them:
-
-```bash
-# SN2 systems
-python 0_prep_initial_TS_structure.py --nuc <nucleophile> --lg <leaving_group>
-
-# Diels-Alder systems
-python 0_prep_initial_TS_structure.py --family da
-```
-
-## Running the Workflow
-
-Run the full pipeline for all systems in a reaction family:
+Run the full pipeline for a reaction family — from TS search through Evans-Polanyi analysis:
 
 ```bash
 # SN2 systems (~5 min total)
@@ -38,9 +28,13 @@ bash run_all_sn2_pipeline.sh
 bash run_all_da_pipeline.sh
 ```
 
-Each script handles: TS optimization → IRC → reactant/product geometry opt → ΔH → Polanyi analysis. Outputs (plots, reports) are written to `output/`.
+Each script handles: TS optimization → IRC → reactant/product geometry opt → ΔH computation → Evans-Polanyi fit. Outputs (correlation plots, fit reports) are written to `output/`.
 
-To run individual systems step by step, replace `[system]` with the system name (e.g. `sn2_cl_br`, `da_i`):
+## Workflow Details
+
+The pipeline consists of 10 steps. Steps 1–9 compute E_a and ΔH for each individual reaction; step 10 fits the Evans-Polanyi relation across all systems in a family.
+
+Replace `[system]` with the system name (e.g., `sn2_cl_br`, `da_i`):
 
 ```bash
 # 1. Prepare TS search input
@@ -49,7 +43,7 @@ python 1_prep_TS_search.py [system] --charge <charge> --mult <multiplicity>
 # 2. Run TS optimization + frequency calculation
 bash 2_submit_TS_search.sh [system]
 
-# 3. Analyze frequencies (checks for imaginary mode)
+# 3. Analyze frequencies (checks for exactly one imaginary mode)
 python 3_frequency_analysis.py [system]
 
 # 4. Prepare IRC input from TS result
@@ -70,8 +64,20 @@ bash 8_submit_geo_opt_reactant_product.sh [system]
 # 9. Compute reaction enthalpy (ΔH)
 python 9_compute_deltaH.py [system]
 
-# 10. Polanyi analysis (run after multiple systems are complete)
+# 10. Evans-Polanyi analysis (run after multiple systems are complete)
 python 10_polanyi_analysis.py
+```
+
+### Input Preparation (optional)
+
+Initial TS guess structures are provided in `TS_guess_xyz/` as `<system>_input.xyz`. To regenerate them:
+
+```bash
+# SN2 systems
+python 0_prep_initial_TS_structure.py --nuc <nucleophile> --lg <leaving_group>
+
+# Diels-Alder systems
+python 0_prep_initial_TS_structure.py --family da
 ```
 
 ## Notes
