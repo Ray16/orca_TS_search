@@ -171,10 +171,10 @@ interface, adapt or use parts of their codes:
 
 
   ***********************************
-  * Starting time: Thu Mar 12 12:39:20 2026
+  * Starting time: Mon Mar 16 14:16:36 2026
   * Host name:     midway3-login4.rcc.local
-  * Process ID:    2734561
-  * Working dir.:  /home/rzhu16/orca_TS_search/sn2_cl_br/IRC
+  * Process ID:    78783
+  * Working dir.:  /home/rzhu16/evans-polanyi-principle-validation/runs/sn2_cl_br/IRC
   ***********************************
 
 
@@ -212,11 +212,13 @@ NAME = sn2_cl_br.inp
 |  3> %irc
 |  4>   Direction both
 |  5>   MaxIter 20
-|  6> end
-|  7> 
-|  8> * xyzfile -1 1 ../TS_search/sn2_cl_br.xyz
+|  6>   InitHess read
+|  7>   Hess_Filename "../TS_search/sn2_cl_br.hess"
+|  8> end
 |  9> 
-| 10>                          ****END OF INPUT****
+| 10> * xyzfile -1 1 ../TS_search/sn2_cl_br.xyz
+| 11> 
+| 12>                          ****END OF INPUT****
 ================================================================================
 
                      *******************************
@@ -317,7 +319,7 @@ NAME = sn2_cl_br.inp
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/12 at 12:39:20.637     
+ * started run on 2026/03/16 at 14:16:37.679     
    ID    Z sym.   atoms
     1    6 C      1
     2    1 H      2-4
@@ -393,68 +395,68 @@ constraining FC (au)   :  0.0500
           ...................................................
 
  iter      E             dE          RMSdq      gap      omega  full diag
-   1    -12.5364495 -0.125364E+02  0.684E+00    4.02       0.0  T
-   2    -12.5839960 -0.475465E-01  0.462E+00    2.83       1.0  T
-   3    -12.5990851 -0.150891E-01  0.211E+00    3.67       1.0  T
-   4    -12.6024652 -0.338013E-02  0.101E+00    3.46       1.0  T
-   5    -12.6028458 -0.380592E-03  0.489E-01    3.35       1.0  T
-   6    -12.6030540 -0.208210E-03  0.359E-01    3.37       1.0  T
-   7    -12.6031701 -0.116058E-03  0.116E-01    3.37       1.0  T
-   8    -12.6031890 -0.188877E-04  0.260E-02    3.36       1.6  T
-   9    -12.6031893 -0.285374E-06  0.204E-02    3.36       2.0  T
-  10    -12.6031903 -0.104209E-05  0.844E-03    3.36       4.8  T
-  11    -12.6031904 -0.636533E-07  0.858E-03    3.36       4.8  T
-  12    -12.6031905 -0.984220E-07  0.567E-04    3.36      72.0  T
-  13    -12.6031905 -0.544828E-09  0.210E-04    3.36     194.0  T
-  14    -12.6031905 -0.761382E-10  0.302E-05    3.36    1352.7  T
-  15    -12.6031905 -0.559552E-12  0.112E-05    3.36    3634.5  T
+   1    -12.5364496 -0.125364E+02  0.684E+00    4.02       0.0  T
+   2    -12.5839960 -0.475464E-01  0.462E+00    2.83       1.0  T
+   3    -12.5990855 -0.150895E-01  0.211E+00    3.67       1.0  T
+   4    -12.6024656 -0.338010E-02  0.101E+00    3.46       1.0  T
+   5    -12.6028462 -0.380585E-03  0.489E-01    3.35       1.0  T
+   6    -12.6030544 -0.208209E-03  0.359E-01    3.37       1.0  T
+   7    -12.6031705 -0.116054E-03  0.116E-01    3.37       1.0  T
+   8    -12.6031893 -0.188886E-04  0.260E-02    3.36       1.6  T
+   9    -12.6031896 -0.285346E-06  0.204E-02    3.36       2.0  T
+  10    -12.6031907 -0.104210E-05  0.844E-03    3.36       4.8  T
+  11    -12.6031907 -0.636537E-07  0.858E-03    3.36       4.8  T
+  12    -12.6031908 -0.984226E-07  0.567E-04    3.36      72.0  T
+  13    -12.6031908 -0.544832E-09  0.210E-04    3.36     194.0  T
+  14    -12.6031908 -0.761347E-10  0.302E-05    3.36    1352.7  T
+  15    -12.6031908 -0.550671E-12  0.112E-05    3.36    3634.4  T
 
    *** convergence criteria satisfied after 15 iterations ***
 
          #    Occupation            Energy/Eh            Energy/eV
       -------------------------------------------------------------
-         1        2.0000           -0.8602550             -23.4087
+         1        2.0000           -0.8602552             -23.4087
        ...           ...                  ...                  ...
          5        2.0000           -0.3525520              -9.5934
-         6        2.0000           -0.2922829              -7.9534
-         7        2.0000           -0.2371679              -6.4537
-         8        2.0000           -0.2371679              -6.4537
-         9        2.0000           -0.2217583              -6.0344
-        10        2.0000           -0.2197738              -5.9803
-        11        2.0000           -0.2197738              -5.9803 (HOMO)
-        12                         -0.0961249              -2.6157 (LUMO)
-        13                          0.2201118               5.9895
-        14                          0.2437226               6.6320
-        15                          0.2437226               6.6320
-        16                          0.2452904               6.6747
+         6        2.0000           -0.2922826              -7.9534
+         7        2.0000           -0.2371681              -6.4537
+         8        2.0000           -0.2371681              -6.4537
+         9        2.0000           -0.2217584              -6.0344
+        10        2.0000           -0.2197735              -5.9803
+        11        2.0000           -0.2197735              -5.9803 (HOMO)
+        12                         -0.0961257              -2.6157 (LUMO)
+        13                          0.2201128               5.9896
+        14                          0.2437223               6.6320
+        15                          0.2437223               6.6320
+        16                          0.2452901               6.6747
        ...                                ...                  ...
-        25                          0.4295817              11.6895
+        25                          0.4295833              11.6896
       -------------------------------------------------------------
-                  HL-Gap            0.1236489 Eh            3.3647 eV
-             Fermi-level           -0.1579493 Eh           -4.2980 eV
+                  HL-Gap            0.1236478 Eh            3.3646 eV
+             Fermi-level           -0.1579496 Eh           -4.2980 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.116 sec
- SCC setup                      ...        0 min,  0.000 sec (  0.203%)
- Dispersion                     ...        0 min,  0.000 sec (  0.089%)
- classical contributions        ...        0 min,  0.000 sec (  0.086%)
- integral evaluation            ...        0 min,  0.112 sec ( 96.604%)
- iterations                     ...        0 min,  0.002 sec (  2.111%)
- molecular gradient             ...        0 min,  0.001 sec (  0.754%)
- printout                       ...        0 min,  0.000 sec (  0.130%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.282 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.076%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.022%)
+ classical contributions        ...        0 min,  0.000 sec (  0.013%)
+ integral evaluation            ...        0 min,  0.276 sec ( 98.082%)
+ iterations                     ...        0 min,  0.003 sec (  1.174%)
+ molecular gradient             ...        0 min,  0.002 sec (  0.548%)
+ printout                       ...        0 min,  0.000 sec (  0.077%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
-         :: total energy             -12.543361317028 Eh    ::
-         :: gradient norm              0.000001126996 Eh/a0 ::
-         :: HOMO-LUMO gap              3.364658634283 eV    ::
+         :: total energy             -12.543361317031 Eh    ::
+         :: gradient norm              0.000000141285 Eh/a0 ::
+         :: HOMO-LUMO gap              3.364627991505 eV    ::
          ::.................................................::
-         :: SCC energy               -12.603190920614 Eh    ::
-         :: -> isotropic ES            0.131637168278 Eh    ::
-         :: -> anisotropic ES         -0.002378193825 Eh    ::
-         :: -> anisotropic XC          0.000957580295 Eh    ::
-         :: -> dispersion             -0.002910034198 Eh    ::
-         :: repulsion energy           0.059829603586 Eh    ::
+         :: SCC energy               -12.603191294885 Eh    ::
+         :: -> isotropic ES            0.131637182332 Eh    ::
+         :: -> anisotropic ES         -0.002378114410 Eh    ::
+         :: -> anisotropic XC          0.000957703620 Eh    ::
+         :: -> dispersion             -0.002910029286 Eh    ::
+         :: repulsion energy           0.059829977854 Eh    ::
          :: add. restraining           0.000000000000 Eh    ::
          :: total charge              -1.000000000000 e     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -463,22 +465,22 @@ constraining FC (au)   :  0.0500
 Property printout bound to 'properties.out'
 
            -------------------------------------------------
-          | TOTAL ENERGY              -12.543361317028 Eh   |
-          | GRADIENT NORM               0.000001126996 Eh/α |
-          | HOMO-LUMO GAP               3.364658634283 eV   |
+          | TOTAL ENERGY              -12.543361317031 Eh   |
+          | GRADIENT NORM               0.000000141285 Eh/α |
+          | HOMO-LUMO GAP               3.364627991505 eV   |
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/12 at 12:39:20.768     
+ * finished run on 2026/03/16 at 14:16:38.066     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.131 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.585 sec
- * ratio c/w:     4.458 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.386 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.490 sec
+ * ratio c/w:     1.268 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.116 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.524 sec
- * ratio c/w:     4.520 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.282 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.343 sec
+ * ratio c/w:     1.218 speedup
 
 
 -------------------------   --------------------
@@ -500,22 +502,22 @@ Magnitude (Debye)      :      1.12347
 CARTESIAN GRADIENT
 ------------------
 
-   1   C   :   -0.000000000    0.000000006    0.000000111
-   2   H   :   -0.000000000    0.000000520    0.000000046
-   3   H   :    0.000000445   -0.000000269    0.000000046
-   4   H   :   -0.000000445   -0.000000269    0.000000046
-   5   Cl  :   -0.000000000    0.000000006   -0.000000577
-   6   Br  :   -0.000000000    0.000000006    0.000000328
+   1   C   :    0.000000002    0.000000013   -0.000000068
+   2   H   :   -0.000000000   -0.000000059    0.000000024
+   3   H   :   -0.000000062    0.000000012    0.000000025
+   4   H   :    0.000000060    0.000000011    0.000000025
+   5   Cl  :   -0.000000000    0.000000012    0.000000027
+   6   Br  :   -0.000000000    0.000000011   -0.000000034
 
 Difference to translation invariance:
-           :    0.0000000000    0.0000000000    0.0000000000
+           :    0.0000000000   -0.0000000000    0.0000000000
 
 Difference to rotation invariance:
-           :   -0.0000000001   -0.0000000006    0.0000000001
+           :   -0.0000000004    0.0000000001    0.0000000003
 
-Norm of the Cartesian gradient     ...    0.0000011270
-RMS gradient                       ...    0.0000002656
-MAX gradient                       ...    0.0000005767
+Norm of the Cartesian gradient     ...    0.0000001413
+RMS gradient                       ...    0.0000000333
+MAX gradient                       ...    0.0000000676
 
 
 
@@ -529,7 +531,8 @@ Algorithm: SD (steepest descent step) plus correction
 Settings:
 Max. no of cycles        MaxIter    .... 20
 Direction                           .... Forward and backward
-Initial displacement Hessian type   .... Compute numerically
+Initial displacement Hessian type   .... Read
+Hessian Filename                    .... ../TS_search/sn2_cl_br.hess
 Following Hessian mode              .... 0
 Initial displacement type           .... Energy
   Initial displacement energy change.... 2.000 mEh
@@ -552,200 +555,11 @@ Storing forward trajectory in       .... sn2_cl_br_IRC_F_trj.xyz
 Storing backward trajectory in      .... sn2_cl_br_IRC_B_trj.xyz
 
 
-
-----------------------------------------------------------------------------
-                           ORCA NUMERICAL FREQUENCIES
-                              (8-process run)
-----------------------------------------------------------------------------
-
-Number of atoms                ... 6
-Central differences            ... NOT used
-Translation invariance         ... used
-Number of displacements        ... 18 - 3
-Numerical increment            ... 5.000e-03 bohr
-IR-spectrum generation         ... on
-Raman-spectrum generation      ... off
-Surface Crossing Hessian       ... off
-
-The output will be reduced. Please look at the following files:
-SCF program output             ... >sn2_cl_br.lastscf
-Integral program output        ... >sn2_cl_br.lastint
-Gradient program output        ... >sn2_cl_br.lastgrad
-Dipole moment program output   ... >sn2_cl_br.lastmom
-
-List of participating nodes    ...  sn2_cl_br.hostnames
-
-	<< Calculating gradient on displaced geometry   8 (of  16) >>
-	<< Calculating gradient on displaced geometry   3 (of  16) >>
-	<< Calculating gradient on displaced geometry   2 (of  16) >>
-	<< Calculating gradient on displaced geometry   4 (of  16) >>
-	<< Calculating gradient on displaced geometry   5 (of  16) >>
-	<< Calculating gradient on displaced geometry   1 (of  16) >>
-	<< Calculating gradient on displaced geometry   7 (of  16) >>
-	<< Calculating gradient on displaced geometry   6 (of  16) >>
-	<< Calculating gradient on displaced geometry   9 (of  16) >>
-	<< Calculating gradient on displaced geometry  11 (of  16) >>
-	<< Calculating gradient on displaced geometry  14 (of  16) >>
-	<< Calculating gradient on displaced geometry  16 (of  16) >>
-	<< Calculating gradient on displaced geometry  13 (of  16) >>
-	<< Calculating gradient on displaced geometry  12 (of  16) >>
-	<< Calculating gradient on displaced geometry  10 (of  16) >>
-	<< Calculating gradient on displaced geometry  15 (of  16) >>
-
-The first frequency considered to be a vibration is 7
-The total number of vibrations considered is 11
-
-
---------------------------
-THERMOCHEMISTRY AT 298.15K
---------------------------
-
-Temperature         ...   298.15 K
-Pressure            ...     1.00 atm
-Total Mass          ...   130.39 AMU
-Quasi RRHO          ...     True
-Cut-Off Frequency   ...     1.00 cm^-1
-
-Throughout the following assumptions are being made:
-  (1) The electronic state is orbitally nondegenerate
-  (2) There are no thermally accessible electronically excited states
-  (3) Hindered rotations indicated by low frequency modes are not
-      treated as such but are treated as vibrations and this may
-      cause some error
-  (4) All equations used are the standard statistical mechanics
-      equations for an ideal gas
-  (5) All vibrations are strictly harmonic
-
-freq.     196.17  E(vib)   ...       0.36 
-freq.     200.47  E(vib)   ...       0.35 
-freq.     206.86  E(vib)   ...       0.35 
-freq.    1026.91  E(vib)   ...       0.02 
-freq.    1027.56  E(vib)   ...       0.02 
-freq.    1031.81  E(vib)   ...       0.02 
-freq.    1055.58  E(vib)   ...       0.02 
-freq.    1330.65  E(vib)   ...       0.01 
-freq.    3118.95  E(vib)   ...       0.00 
-freq.    3206.40  E(vib)   ...       0.00 
-freq.    3226.82  E(vib)   ...       0.00 
-
-------------
-INNER ENERGY
-------------
-
-The inner energy is: U= E(el) + E(ZPE) + E(vib) + E(rot) + E(trans)
-    E(el)   - is the total energy from the electronic structure calculation
-              = E(kin-el) + E(nuc-el) + E(el-el) + E(nuc-nuc)
-    E(ZPE)  - the the zero temperature vibrational energy from the frequency calculation
-    E(vib)  - the the finite temperature correction to E(ZPE) due to population
-              of excited vibrational states
-    E(rot)  - is the rotational thermal energy
-    E(trans)- is the translational thermal energy
-
-Summary of contributions to the inner energy U:
-Electronic energy                ...    -12.54336132 Eh
-Zero point energy                ...      0.03560364 Eh      22.34 kcal/mol
-Thermal vibrational correction   ...      0.00181533 Eh       1.14 kcal/mol
-Thermal rotational correction    ...      0.00141627 Eh       0.89 kcal/mol
-Thermal translational correction ...      0.00141627 Eh       0.89 kcal/mol
------------------------------------------------------------------------
-Total thermal energy                    -12.50310981 Eh
-
-
-Summary of corrections to the electronic energy:
-(perhaps to be used in another calculation)
-Total thermal correction                  0.00464787 Eh       2.92 kcal/mol
-Non-thermal (ZPE) correction              0.03560364 Eh      22.34 kcal/mol
------------------------------------------------------------------------
-Total correction                          0.04025151 Eh      25.26 kcal/mol
-
-
---------
-ENTHALPY
---------
-
-The enthalpy is H = U + kB*T
-                kB is Boltzmann's constant
-Total thermal energy              ...    -12.50310981 Eh 
-Thermal Enthalpy correction       ...      0.00094421 Eh       0.59 kcal/mol
------------------------------------------------------------------------
-Total Enthalpy                    ...    -12.50216560 Eh
-
-
-WARNING (ORCA/SYM): The number of Z matrix atoms does not agree with
-the number of centers in the basis set. The point group will therefore
-be determined without considering basis set information.
-
-
-Note: Rotational entropy computed according to Herzberg 
-Infrared and Raman Spectra, Chapter V,1, Van Nostrand Reinhold, 1945 
-Point Group:  C3v, Symmetry Number:   3  
-Rotational constants in cm-1:     4.889017     0.031268     0.031268 
-
-Vibrational entropy computed according to the QRRHO of S. Grimme
-Chem.Eur.J. 2012 18 9955 using a reference frequency of 100.0 cm-1
-
-
--------
-ENTROPY
--------
-
-The entropy contributions are T*S = T*(S(el)+S(vib)+S(rot)+S(trans))
-     S(el)   - electronic entropy
-     S(vib)  - vibrational entropy
-     S(rot)  - rotational entropy
-     S(trans)- translational entropy
-The entropies will be listed as multiplied by the temperature to get
-units of energy
-
-Electronic entropy                ...      0.00000000 Eh      0.00 kcal/mol
-Vibrational entropy               ...      0.00319474 Eh      2.00 kcal/mol
-Rotational entropy                ...      0.01099605 Eh      6.90 kcal/mol
-Translational entropy             ...      0.01924704 Eh     12.08 kcal/mol
------------------------------------------------------------------------
-Final entropy term                ...      0.03343784 Eh     20.98 kcal/mol
-
-In case the symmetry of your molecule has not been determined correctly
-or in case you have a reason to use a different symmetry number we print 
-out the resulting rotational entropy values for sn=1,12:
-
- non-linear molecules -----------------------------------
-|  sn= 1 | S(rot)=       0.01203334 Eh      7.55 kcal/mol|
-|  sn= 2 | S(rot)=       0.01137889 Eh      7.14 kcal/mol|
-|  sn= 3 | S(rot)=       0.01099605 Eh      6.90 kcal/mol|
-|  sn= 4 | S(rot)=       0.01072443 Eh      6.73 kcal/mol|
-|  sn= 5 | S(rot)=       0.01051374 Eh      6.60 kcal/mol|
-|  sn= 6 | S(rot)=       0.01034160 Eh      6.49 kcal/mol|
-|  sn= 7 | S(rot)=       0.01019605 Eh      6.40 kcal/mol|
-|  sn= 8 | S(rot)=       0.01006997 Eh      6.32 kcal/mol|
-|  sn= 9 | S(rot)=       0.00995877 Eh      6.25 kcal/mol|
-|  sn=10 | S(rot)=       0.00985929 Eh      6.19 kcal/mol|
-|  sn=11 | S(rot)=       0.00976930 Eh      6.13 kcal/mol|
-|  sn=12 | S(rot)=       0.00968714 Eh      6.08 kcal/mol|
- linear molecules ---------------------------------------
-|  Dinfh | S(rot)=       0.00859754 Eh      5.40 kcal/mol|
-|  Cinfv | S(rot)=       0.00925200 Eh      5.81 kcal/mol|
- --------------------------------------------------------
-
-
--------------------
-GIBBS FREE ENERGY
--------------------
-
-The Gibbs free energy is G = H - T*S
-
-Total enthalpy                    ...    -12.50216560 Eh 
-Total entropy correction          ...     -0.03343784 Eh    -20.98 kcal/mol
------------------------------------------------------------------------
-Final Gibbs free energy         ...    -12.53560344 Eh
-
-For completeness - the Gibbs free energy minus the electronic energy
-G-E(el)                           ...      0.00775788 Eh      4.87 kcal/mol
-
-
+ ...good, the file ../TS_search/sn2_cl_br.hess exists
 Reading the hessian file           ...... done
 Determining length of initial displacement:
   Requested energy change (quadratic behavior): 2.000 mEh
-  Resulting scaling factor for initial displacement along normalized TS mode: 0.2565
+  Resulting scaling factor for initial displacement along normalized TS mode: 0.2569
 
          *************************************************************
          *                          FORWARD IRC                      *
@@ -753,17 +567,19 @@ Determining length of initial displacement:
 
 Iteration    E(Eh)      dE(kcal/mol)  max(|G|)   RMS(G) 
 Convergence thresholds                0.002000  0.000500            
-    0       -12.545151   -1.123185    0.010648  0.004054
-    1       -12.547982   -2.899639    0.014829  0.004906
-    2       -12.550846   -4.696732    0.014684  0.004256
-    3       -12.552412   -5.679342    0.007222  0.002134
-    4       -12.553174   -6.157610    0.003897  0.001667
-    5       -12.553244   -6.201542    0.003588  0.001189
-    6       -12.553312   -6.244411    0.003153  0.000976
-    7       -12.553361   -6.274605    0.002819  0.000777
-    8       -12.553411   -6.306153    0.002432  0.000631
-    9       -12.553456   -6.334523    0.002044  0.000558
-   10       -12.553492   -6.357101    0.001699  0.000441
+    0       -12.545202   -1.155216    0.012180  0.004121
+    1       -12.548302   -3.100261    0.017878  0.005643
+    2       -12.551966   -5.399518    0.019005  0.005762
+    3       -12.555076   -7.351318    0.010648  0.003692
+    4       -12.556524   -8.259848    0.007669  0.002019
+    5       -12.557379   -8.796234    0.003845  0.001269
+    6       -12.557503   -8.873979    0.004545  0.001680
+    7       -12.557545   -8.900094    0.003140  0.001029
+    8       -12.557585   -8.925636    0.002930  0.000807
+    9       -12.557639   -8.959089    0.002608  0.000675
+   10       -12.557688   -8.990198    0.002270  0.000617
+   11       -12.557729   -9.015937    0.001971  0.000510
+   12       -12.557766   -9.039029    0.001665  0.000453
 
                       ***********************HURRAY********************
                       ***            THE IRC HAS CONVERGED          ***
@@ -776,17 +592,16 @@ Convergence thresholds                0.002000  0.000500
 
 Iteration    E(Eh)      dE(kcal/mol)  max(|G|)   RMS(G) 
 Convergence thresholds                0.002000  0.000500            
-    0       -12.545198   -1.152498    0.012176  0.004109
-    1       -12.548301   -3.099431    0.017864  0.005648
-    2       -12.551963   -5.397428    0.019034  0.005765
-    3       -12.555068   -7.345753    0.010651  0.003763
-    4       -12.556504   -8.247081    0.007756  0.002139
-    5       -12.557301   -8.747064    0.004578  0.001914
-    6       -12.557405   -8.812418    0.003750  0.001319
-    7       -12.557481   -8.860316    0.003476  0.001060
-    8       -12.557595   -8.931497    0.002894  0.000752
-    9       -12.557696   -8.994928    0.002189  0.000612
-   10       -12.557767   -9.039914    0.001663  0.000487
+    0       -12.545157   -1.126935    0.010660  0.004057
+    1       -12.547991   -2.905072    0.014823  0.004907
+    2       -12.550853   -4.701281    0.014660  0.004248
+    3       -12.552416   -5.681732    0.007212  0.002116
+    4       -12.553196   -6.171386    0.003900  0.001222
+    5       -12.553335   -6.258733    0.002927  0.001305
+    6       -12.553370   -6.280560    0.002744  0.000853
+    7       -12.553407   -6.303846    0.002458  0.000697
+    8       -12.553450   -6.330586    0.002103  0.000545
+    9       -12.553489   -6.354963    0.001732  0.000483
 
                       ***********************HURRAY********************
                       ***            THE IRC HAS CONVERGED          ***
@@ -799,29 +614,30 @@ Convergence thresholds                0.002000  0.000500
 All gradients are in Eh/Bohr.
 
 Step        E(Eh)      dE(kcal/mol)  max(|G|)   RMS(G) 
-   1       -12.557767   -9.039914    0.001663  0.000487
-   2       -12.557696   -8.994928    0.002189  0.000612
-   3       -12.557595   -8.931497    0.002894  0.000752
-   4       -12.557481   -8.860316    0.003476  0.001060
-   5       -12.557405   -8.812418    0.003750  0.001319
-   6       -12.557301   -8.747064    0.004578  0.001914
-   7       -12.556504   -8.247081    0.007756  0.002139
-   8       -12.555068   -7.345753    0.010651  0.003763
-   9       -12.551963   -5.397428    0.019034  0.005765
-  10       -12.548301   -3.099431    0.017864  0.005648
-  11       -12.545198   -1.152498    0.012176  0.004109
-  12       -12.543361    0.000000    0.000001  0.000000 <= TS
-  13       -12.545151   -1.123185    0.010648  0.004054
-  14       -12.547982   -2.899639    0.014829  0.004906
-  15       -12.550846   -4.696732    0.014684  0.004256
-  16       -12.552412   -5.679342    0.007222  0.002134
-  17       -12.553174   -6.157610    0.003897  0.001667
-  18       -12.553244   -6.201542    0.003588  0.001189
-  19       -12.553312   -6.244411    0.003153  0.000976
-  20       -12.553361   -6.274605    0.002819  0.000777
-  21       -12.553411   -6.306153    0.002432  0.000631
-  22       -12.553456   -6.334523    0.002044  0.000558
-  23       -12.553492   -6.357101    0.001699  0.000441
+   1       -12.553489   -6.354963    0.001732  0.000483
+   2       -12.553450   -6.330586    0.002103  0.000545
+   3       -12.553407   -6.303846    0.002458  0.000697
+   4       -12.553370   -6.280560    0.002744  0.000853
+   5       -12.553335   -6.258733    0.002927  0.001305
+   6       -12.553196   -6.171386    0.003900  0.001222
+   7       -12.552416   -5.681732    0.007212  0.002116
+   8       -12.550853   -4.701281    0.014660  0.004248
+   9       -12.547991   -2.905072    0.014823  0.004907
+  10       -12.545157   -1.126935    0.010660  0.004057
+  11       -12.543361    0.000000    0.000000  0.000000 <= TS
+  12       -12.545202   -1.155216    0.012180  0.004121
+  13       -12.548302   -3.100261    0.017878  0.005643
+  14       -12.551966   -5.399518    0.019005  0.005762
+  15       -12.555076   -7.351318    0.010648  0.003692
+  16       -12.556524   -8.259848    0.007669  0.002019
+  17       -12.557379   -8.796234    0.003845  0.001269
+  18       -12.557503   -8.873979    0.004545  0.001680
+  19       -12.557545   -8.900094    0.003140  0.001029
+  20       -12.557585   -8.925636    0.002930  0.000807
+  21       -12.557639   -8.959089    0.002608  0.000675
+  22       -12.557688   -8.990198    0.002270  0.000617
+  23       -12.557729   -9.015937    0.001971  0.000510
+  24       -12.557766   -9.039029    0.001665  0.000453
 
 --------------------------------
 SUGGESTED CITATIONS FOR THIS RUN
@@ -894,8 +710,7 @@ List of optional additional citations
 
 Timings for individual modules:
 
-Sum of individual times          ...       14.522 sec (=   0.242 min)
-Numerical frequency calculation  ...        1.944 sec (=   0.032 min)  13.4 %
-XTB module                       ...       12.578 sec (=   0.210 min)  86.6 %
+Sum of individual times          ...       16.657 sec (=   0.278 min)
+XTB module                       ...       16.657 sec (=   0.278 min) 100.0 %
                              ****ORCA TERMINATED NORMALLY****
-TOTAL RUN TIME: 0 days 0 hours 0 minutes 15 seconds 56 msec
+TOTAL RUN TIME: 0 days 0 hours 0 minutes 18 seconds 75 msec

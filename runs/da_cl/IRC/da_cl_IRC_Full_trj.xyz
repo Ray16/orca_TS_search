@@ -1,5 +1,5 @@
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.867441903120
+Coordinates from ORCA-job da_cl_IRC_Full E -21.867441903110
   C       0.084888      0.152823     -0.013611
   C       1.317154      0.068997     -0.502553
   C       2.197125      1.220496     -0.474268
@@ -17,7 +17,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.867441903120
   H       3.289051      0.472487      2.394224
   Cl      2.262570      2.590865      2.632902
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.867080596180
+Coordinates from ORCA-job da_cl_IRC_Full E -21.867080596170
   C       0.086991      0.152792     -0.009437
   C       1.317640      0.068730     -0.503519
   C       2.196671      1.220684     -0.475155
@@ -35,7 +35,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.867080596180
   H       3.288953      0.471761      2.389956
   Cl      2.262767      2.590722      2.628860
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.866708332130
+Coordinates from ORCA-job da_cl_IRC_Full E -21.866708332120
   C       0.089430      0.152754     -0.005376
   C       1.317817      0.068527     -0.504358
   C       2.196306      1.220854     -0.476011
@@ -71,7 +71,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.866326099390
   H       3.288646      0.470276      2.381557
   Cl      2.263087      2.590404      2.620781
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.865932395650
+Coordinates from ORCA-job da_cl_IRC_Full E -21.865932395640
   C       0.094074      0.152738      0.002924
   C       1.318491      0.068076     -0.506138
   C       2.195467      1.221204     -0.477721
@@ -89,7 +89,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.865932395650
   H       3.288422      0.469517      2.377443
   Cl      2.263207      2.590228      2.616755
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.865528160450
+Coordinates from ORCA-job da_cl_IRC_Full E -21.865528160460
   C       0.096263      0.152760      0.007189
   C       1.319008      0.067824     -0.507093
   C       2.194988      1.221382     -0.478581
@@ -143,7 +143,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.864684372780
   H       3.287995      0.466946      2.365572
   Cl      2.263423      2.589719      2.604862
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.864244084330
+Coordinates from ORCA-job da_cl_IRC_Full E -21.864244084340
   C       0.103765      0.152886      0.019952
   C       1.319856      0.067259     -0.509687
   C       2.193742      1.221844     -0.481107
@@ -197,7 +197,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.863323174940
   H       3.287369      0.464046      2.354720
   Cl      2.263365      2.589176      2.593411
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.862856483180
+Coordinates from ORCA-job da_cl_IRC_Full E -21.862856483190
   C       0.110937      0.153186      0.033542
   C       1.321459      0.066635     -0.512630
   C       2.192271      1.222272     -0.483715
@@ -215,7 +215,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.862856483180
   H       3.287431      0.462913      2.351514
   Cl      2.263301      2.588975      2.589889
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.862468612190
+Coordinates from ORCA-job da_cl_IRC_Full E -21.862468612200
   C       0.112321      0.153168      0.037201
   C       1.322420      0.066156     -0.513629
   C       2.191762      1.222569     -0.484410
@@ -233,7 +233,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.862468612190
   H       3.287806      0.461885      2.349166
   Cl      2.263252      2.588719      2.587266
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.861833242090
+Coordinates from ORCA-job da_cl_IRC_Full E -21.861833242120
   C       0.117445      0.152430      0.041796
   C       1.323720      0.064579     -0.514951
   C       2.190573      1.222651     -0.485424
@@ -251,7 +251,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.861833242090
   H       3.289575      0.459478      2.345559
   Cl      2.263166      2.586570      2.582999
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.859853612410
+Coordinates from ORCA-job da_cl_IRC_Full E -21.859853612420
   C       0.127527      0.154826      0.064090
   C       1.322341      0.067519     -0.518355
   C       2.190316      1.222282     -0.489280
@@ -269,7 +269,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.859853612410
   H       3.283888      0.456695      2.339199
   Cl      2.262106      2.588902      2.573490
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.857371770640
+Coordinates from ORCA-job da_cl_IRC_Full E -21.857371770630
   C       0.143990      0.154886      0.089539
   C       1.324742      0.065814     -0.523938
   C       2.187836      1.222555     -0.493457
@@ -521,7 +521,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.886985888290
   H       3.154428      0.409171      2.484233
   Cl      2.258453      2.539590      2.525351
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.888546657880
+Coordinates from ORCA-job da_cl_IRC_Full E -21.888546657890
   C       0.251191      0.169348      0.424858
   C       1.358175      0.079624     -0.544907
   C       2.127725      1.206464     -0.521564
@@ -611,7 +611,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.889378589880
   H       3.124052      0.397952      2.488126
   Cl      2.258100      2.548553      2.478395
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.889542236830
+Coordinates from ORCA-job da_cl_IRC_Full E -21.889542236820
   C       0.244283      0.173954      0.423969
   C       1.357342      0.082631     -0.541951
   C       2.126871      1.205590     -0.516315
@@ -629,7 +629,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.889542236830
   H       3.120907      0.398092      2.489900
   Cl      2.257033      2.551288      2.470119
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.889685976040
+Coordinates from ORCA-job da_cl_IRC_Full E -21.889685976030
   C       0.242704      0.175782      0.423942
   C       1.357331      0.083172     -0.540731
   C       2.126304      1.205985     -0.515149
@@ -647,7 +647,7 @@ Coordinates from ORCA-job da_cl_IRC_Full E -21.889685976040
   H       3.117788      0.399356      2.491918
   Cl      2.255346      2.554421      2.461309
 16
-Coordinates from ORCA-job da_cl_IRC_Full E -21.889812407380
+Coordinates from ORCA-job da_cl_IRC_Full E -21.889812407370
   C       0.241014      0.177608      0.424175
   C       1.356815      0.083983     -0.539417
   C       2.126745      1.206030     -0.513804

@@ -121,11 +121,18 @@ if [[ ${#FAILED[@]} -gt 0 ]]; then
 fi
 echo ""
 
-# Step 5: Polanyi analysis
+# Activate conda for matplotlib/numpy
+source /software/python-anaconda-2021.05-el8-x86_64/etc/profile.d/conda.sh 2>/dev/null || true
+conda activate base 2>/dev/null || true
+
+# Step 5: Combined plots
+echo "=== Generating combined frequency and IRC plots ==="
+python3 3_frequency_analysis.py --all --combined 2>&1 || true
+python3 6_plot_irc_energy_profile.py --combined 2>&1 || true
+
+# Step 6: Polanyi analysis
 if [[ ${#SUCCEEDED[@]} -ge 2 ]]; then
   echo "=== Running Polanyi Analysis ==="
-  source /software/python-anaconda-2021.05-el8-x86_64/etc/profile.d/conda.sh 2>/dev/null || true
-  conda activate base 2>/dev/null || true
   python3 10_polanyi_analysis.py --root "$RUNS_DIR" 2>&1
 fi
 

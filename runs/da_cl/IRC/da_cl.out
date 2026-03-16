@@ -171,10 +171,10 @@ interface, adapt or use parts of their codes:
 
 
   ***********************************
-  * Starting time: Sun Mar 15 21:59:29 2026
-  * Host name:     midway3-login3.rcc.local
-  * Process ID:    3192007
-  * Working dir.:  /home/rzhu16/orca_TS_search/runs/da_cl/IRC
+  * Starting time: Mon Mar 16 14:15:23 2026
+  * Host name:     midway3-login4.rcc.local
+  * Process ID:    63220
+  * Working dir.:  /home/rzhu16/evans-polanyi-principle-validation/runs/da_cl/IRC
   ***********************************
 
 
@@ -319,7 +319,7 @@ NAME = da_cl.inp
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/15 at 21:59:30.044     
+ * started run on 2026/03/16 at 14:15:24.957     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -330,7 +330,7 @@ NAME = da_cl.inp
            -------------------------------------------------
 
           program call               : /software/orca-6.1.0-el8-x86_64/bin/otool_xtb da_cl_XTB.xyz --grad -c 0 -u 0 -P 8 --namespace da_cl --input da_cl_XTB.input.tmp --acc 0.200000
-          hostname                   : midway3-login3.rcc.local
+          hostname                   : midway3-login4.rcc.local
           calculation namespace      : da_cl
           coordinate file            : da_cl_XTB.xyz
           omp threads                :                     8
@@ -406,8 +406,8 @@ constraining FC (au)   :  0.0500
   10    -22.1529812 -0.242812E-05  0.722E-03    3.02       3.5  T
   11    -22.1529814 -0.215677E-06  0.258E-03    3.02       9.7  T
   12    -22.1529815 -0.909974E-07  0.645E-04    3.02      38.7  T
-  13    -22.1529815 -0.666606E-09  0.196E-04    3.02     127.8  T
-  14    -22.1529815 -0.127098E-09  0.128E-04    3.02     195.8  T
+  13    -22.1529815 -0.666599E-09  0.196E-04    3.02     127.8  T
+  14    -22.1529815 -0.127088E-09  0.128E-04    3.02     195.8  T
 
    *** convergence criteria satisfied after 14 iterations ***
 
@@ -433,21 +433,21 @@ constraining FC (au)   :  0.0500
                   HL-Gap            0.1111403 Eh            3.0243 eV
              Fermi-level           -0.3049583 Eh           -8.2983 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.029 sec
- SCC setup                      ...        0 min,  0.000 sec (  0.682%)
- Dispersion                     ...        0 min,  0.000 sec (  0.319%)
- classical contributions        ...        0 min,  0.000 sec (  0.105%)
- integral evaluation            ...        0 min,  0.023 sec ( 78.117%)
- iterations                     ...        0 min,  0.005 sec ( 15.940%)
- molecular gradient             ...        0 min,  0.001 sec (  4.362%)
- printout                       ...        0 min,  0.000 sec (  0.411%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.185 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.146%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.048%)
+ classical contributions        ...        0 min,  0.000 sec (  0.015%)
+ integral evaluation            ...        0 min,  0.109 sec ( 59.026%)
+ iterations                     ...        0 min,  0.073 sec ( 39.307%)
+ molecular gradient             ...        0 min,  0.003 sec (  1.355%)
+ printout                       ...        0 min,  0.000 sec (  0.091%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          :: total energy             -21.843008426729 Eh    ::
-         :: gradient norm              0.000010245524 Eh/a0 ::
-         :: HOMO-LUMO gap              3.024282239490 eV    ::
+         :: gradient norm              0.000010245523 Eh/a0 ::
+         :: HOMO-LUMO gap              3.024282239469 eV    ::
          ::.................................................::
          :: SCC energy               -22.152943611973 Eh    ::
          :: -> isotropic ES            0.006345644625 Eh    ::
@@ -456,7 +456,7 @@ constraining FC (au)   :  0.0500
          :: -> dispersion             -0.013334292598 Eh    ::
          :: repulsion energy           0.309935185244 Eh    ::
          :: add. restraining           0.000000000000 Eh    ::
-         :: total charge               0.000000000000 e     ::
+         :: total charge              -0.000000000000 e     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -464,21 +464,21 @@ Property printout bound to 'properties.out'
 
            -------------------------------------------------
           | TOTAL ENERGY              -21.843008426729 Eh   |
-          | GRADIENT NORM               0.000010245524 Eh/α |
-          | HOMO-LUMO GAP               3.024282239490 eV   |
+          | GRADIENT NORM               0.000010245523 Eh/α |
+          | HOMO-LUMO GAP               3.024282239469 eV   |
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/15 at 21:59:30.093     
+ * finished run on 2026/03/16 at 14:15:25.164     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.048 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.300 sec
- * ratio c/w:     6.241 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.207 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.473 sec
+ * ratio c/w:     2.285 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.030 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.215 sec
- * ratio c/w:     7.249 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.186 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.390 sec
+ * ratio c/w:     2.102 speedup
 
 
 -------------------------   --------------------
@@ -518,7 +518,7 @@ CARTESIAN GRADIENT
   16   Cl  :    0.000000089   -0.000000541   -0.000000082
 
 Difference to translation invariance:
-           :    0.0000000000    0.0000000000   -0.0000000000
+           :    0.0000000000    0.0000000000    0.0000000000
 
 Difference to rotation invariance:
            :    0.0000006862    0.0000006212   -0.0000012879
@@ -744,7 +744,7 @@ List of optional additional citations
 
 Timings for individual modules:
 
-Sum of individual times          ...        9.630 sec (=   0.161 min)
-XTB module                       ...        9.630 sec (=   0.161 min) 100.0 %
+Sum of individual times          ...       29.446 sec (=   0.491 min)
+XTB module                       ...       29.446 sec (=   0.491 min) 100.0 %
                              ****ORCA TERMINATED NORMALLY****
-TOTAL RUN TIME: 0 days 0 hours 0 minutes 10 seconds 691 msec
+TOTAL RUN TIME: 0 days 0 hours 0 minutes 31 seconds 886 msec

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import pandas as pd
 
-from workflow_utils import resolve_system_name, resolve_system_dir
+from workflow_utils import resolve_system_name, resolve_system_dir, should_swap_rp
 
 
 HARTREE_TO_KCAL_MOL = 627.509474
@@ -138,20 +138,51 @@ SN2_ORDER = [
 ]
 
 
-def _plot_irc_on_ax(ax, df, sysname):
+def _determine_swap(system_dir, sysname):
+    """Determine if IRC backward/forward endpoints need R/P swap.
+
+    Delegates to the generic should_swap_rp() in workflow_utils, which
+    dispatches by reaction family (SN2: geometry, DA: enthalpy).
+    """
+    swap = should_swap_rp(sysname, system_dir)
+    return swap if swap is not None else False
+
+
+def _plot_irc_on_ax(ax, df, sysname, swap_rp=False):
     short = re.sub(r"^(sn2|da)_", "", sysname).replace("_", u"\u2192")
-    ax.plot(df["irc_step"], df["rel_energy_kcal_mol"], marker="o", markersize=3, linewidth=1.5)
+    ax.plot(df["irc_step"].to_numpy(), df["rel_energy_kcal_mol"].to_numpy(), marker="o", markersize=3, linewidth=1.5)
+
+    # Mark TS (step 0)
     ts_rows = df[df["direction"] == "TS"]
     if not ts_rows.empty:
         ts_step = float(ts_rows.iloc[0]["irc_step"])
         ts_rel = float(ts_rows.iloc[0]["rel_energy_kcal_mol"])
-        ax.scatter([ts_step], [ts_rel], color="crimson", zorder=5, s=40)
-        ax.axhline(ts_rel, color="crimson", linestyle="--", linewidth=0.8, alpha=0.8)
-        ax.text(0.03, 0.96, f"{ts_rel:.1f} kcal/mol",
-                transform=ax.transAxes, ha="left", va="top",
-                fontsize=7, color="crimson", weight="bold",
-                bbox={"facecolor": "white", "edgecolor": "crimson",
-                      "alpha": 0.85, "boxstyle": "round,pad=0.2"})
+        ax.scatter([ts_step], [ts_rel], color="crimson", zorder=5, s=50, marker="D")
+        ax.annotate("TS", (ts_step, ts_rel), textcoords="offset points",
+                    xytext=(0, 8), ha="center", fontsize=7, color="crimson", weight="bold")
+
+    # Identify endpoints by IRC step
+    sorted_df = df.sort_values("irc_step")
+    left_step = float(sorted_df.iloc[0]["irc_step"])
+    left_rel = float(sorted_df.iloc[0]["rel_energy_kcal_mol"])
+    right_step = float(sorted_df.iloc[-1]["irc_step"])
+    right_rel = float(sorted_df.iloc[-1]["rel_energy_kcal_mol"])
+
+    # Assign R/P based on geometry analysis (swap_rp=True means the backward
+    # endpoint is actually the product, not the reactant)
+    if swap_rp:
+        r_step, r_rel, p_step, p_rel = right_step, right_rel, left_step, left_rel
+    else:
+        r_step, r_rel, p_step, p_rel = left_step, left_rel, right_step, right_rel
+
+    ax.scatter([r_step], [r_rel], color="forestgreen", zorder=5, s=50, marker="s")
+    ax.annotate("R", (r_step, r_rel), textcoords="offset points",
+                xytext=(0, 8), ha="center", fontsize=7, color="forestgreen", weight="bold")
+
+    ax.scatter([p_step], [p_rel], color="royalblue", zorder=5, s=50, marker="s")
+    ax.annotate("P", (p_step, p_rel), textcoords="offset points",
+                xytext=(0, 8), ha="center", fontsize=7, color="royalblue", weight="bold")
+
     ax.set_title(short, fontsize=9, fontweight="bold")
     ax.set_xlabel("IRC Step", fontsize=7)
     ax.set_ylabel("Rel. E (kcal/mol)", fontsize=7)
@@ -161,12 +192,12 @@ def _plot_irc_on_ax(ax, df, sysname):
 
 
 def plot_combined_irc(systems_data, output_path, nrows, ncols, title):
-    """systems_data: list of (sysname, df) tuples."""
+    """systems_data: list of (sysname, df, swap_rp) tuples."""
     fig, axes = plt.subplots(nrows, ncols, figsize=(4.5 * ncols, 3.5 * nrows))
     axes_flat = [ax for row in (axes if nrows > 1 else [axes]) for ax in (row if ncols > 1 else [row])]
 
-    for idx, (sysname, df) in enumerate(systems_data):
-        _plot_irc_on_ax(axes_flat[idx], df, sysname)
+    for idx, (sysname, df, swap_rp) in enumerate(systems_data):
+        _plot_irc_on_ax(axes_flat[idx], df, sysname, swap_rp=swap_rp)
 
     for idx in range(len(systems_data), nrows * ncols):
         axes_flat[idx].set_visible(False)
@@ -226,27 +257,39 @@ def main():
             stem = detect_stem(irc_dir, args.base)
             df = build_profile(irc_dir, stem)
             real_sysname = os.path.basename(os.path.dirname(irc_dir))
+            irc_csv_dir = os.path.join(output_dir, "irc_energy_profile")
+            os.makedirs(irc_csv_dir, exist_ok=True)
             csv_name = args.csv if (args.csv and not args.combined) else f"{real_sysname}_irc_energy_profile.csv"
-            df.to_csv(os.path.join(output_dir, csv_name), index=False)
-            print(f"Wrote CSV: {os.path.join(output_dir, csv_name)}")
-            collected.append((real_sysname, df))
+            csv_path = os.path.join(irc_csv_dir, csv_name)
+            df.to_csv(csv_path, index=False)
+            print(f"Wrote CSV: {csv_path}")
+            swap_rp = _determine_swap(target_dir, real_sysname)
+            if swap_rp:
+                print(f"  Note: R/P swapped for {real_sysname}")
+            collected.append((real_sysname, df, swap_rp))
         except FileNotFoundError as e:
             print(f"Skipping {sysname}: {e}")
 
     if args.combined:
-        sn2_data = [(s, d) for s, d in collected if s in SN2_ORDER]
+        sn2_data = [(s, d, sw) for s, d, sw in collected if s in SN2_ORDER]
         sn2_data.sort(key=lambda x: SN2_ORDER.index(x[0]) if x[0] in SN2_ORDER else 999)
         if sn2_data:
             plot_combined_irc(sn2_data, os.path.join(output_dir, "sn2_irc_combined.png"),
                               nrows=4, ncols=3, title="SN2 IRC Energy Profiles")
+
+        da_data = [(s, d, sw) for s, d, sw in collected if s.startswith("da_")]
+        da_data.sort(key=lambda x: x[0])
+        if da_data:
+            plot_combined_irc(da_data, os.path.join(output_dir, "da_irc_combined.png"),
+                              nrows=2, ncols=2, title="Diels-Alder IRC Energy Profiles")
     else:
         if collected:
-            sysname, df = collected[0]
+            sysname, df, swap_rp = collected[0]
             stem = detect_stem(detect_irc_dir(resolve_system_dir(sysname, script_dir)), args.base)
             png_name = args.png if args.png else f"{sysname}_irc_energy_profile.png"
             png_path = os.path.join(output_dir, png_name)
             fig, ax = plt.subplots(figsize=(9, 5.5))
-            _plot_irc_on_ax(ax, df, sysname)
+            _plot_irc_on_ax(ax, df, sysname, swap_rp=swap_rp)
             ax.set_title(f"IRC Energy Profile ({stem}_IRC)")
             fig.tight_layout()
             fig.savefig(png_path, dpi=300)

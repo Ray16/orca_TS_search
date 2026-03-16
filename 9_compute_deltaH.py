@@ -61,19 +61,6 @@ def extract_total_enthalpy(out_path):
     raise ValueError(f"Could not find Total enthalpy in {out_path}")
 
 
-def write_report(out_path, h_react, h_prod, dh_eh, dh_kcal, reactant_out, product_out):
-    lines = [
-        f"Reactant output: {reactant_out}",
-        f"Product output: {product_out}",
-        f"H_reactant (Eh): {h_react:.10f}",
-        f"H_product  (Eh): {h_prod:.10f}",
-        f"DeltaH (Eh): {dh_eh:.10f}",
-        f"DeltaH (kcal/mol): {dh_kcal:.4f}",
-    ]
-    with open(out_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
-
-
 def main():
     parser = argparse.ArgumentParser(
         description="Compute DeltaH_rxn from ORCA opt+freq outputs (reactant/product)."
@@ -95,7 +82,6 @@ def main():
         default=None,
         help="Product .out path (absolute or relative to the reactant/product directory).",
     )
-    parser.add_argument("--outdir", default=None, help="Output directory (defaults to output/).")
     parser.add_argument(
         "--rp-dir",
         default=None,
@@ -130,14 +116,8 @@ def main():
     dh_eh = h_prod - h_react
     dh_kcal = dh_eh * HARTREE_TO_KCAL
 
-    out_dir = os.path.join(script_dir, "output") if args.outdir is None else args.outdir
-    os.makedirs(out_dir, exist_ok=True)
-    report_path = os.path.join(out_dir, f"{sysname}_deltaH.txt")
-    write_report(report_path, h_react, h_prod, dh_eh, dh_kcal, reactant_out, product_out)
-
     print(f"DeltaH (Eh): {dh_eh:.10f}")
     print(f"DeltaH (kcal/mol): {dh_kcal:.4f}")
-    print(f"Wrote: {report_path}")
     return 0
 
 

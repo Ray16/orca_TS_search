@@ -13,12 +13,12 @@ $Geometry
    &NCorelessECP [&Type "Integer"] 0
    &NGhostAtoms [&Type "Integer"] 0
    &CartesianCoordinates [&Type "Coordinates", &Dim(6,4), &Units "Bohr"] 
-              C      0.000000007867   -0.000000131664    0.001112829743
-              H      0.000000009858    2.017881361562    0.061652038769
-              H      1.747536566158   -1.008941028670    0.061652512239
-              H     -1.747536547907   -1.008941029508    0.061652504572
-              Cl    -0.000000022231    0.000001126297    4.256629251511
-              Br    -0.000000013745   -0.000000298016   -4.482685741828
+              C      0.000000009836   -0.000000257840    0.001115867085
+              H      0.000000009132    2.017879735639    0.061651419880
+              H      1.747535199054   -1.008940562288    0.061652011068
+              H     -1.747535183355   -1.008940563770    0.061652012532
+              Cl    -0.000000017614    0.000001751876    4.256635074945
+              Br    -0.000000017053   -0.000000103617   -4.482692990504
 $End
 $Single_Point_Data
    &GeometryIndex 1
@@ -37,54 +37,9 @@ $Calculation_Info
    &NumOfAuxJKBasisFuncts [&Type "Integer"] 0
    &NumOfCABSBasisFuncts [&Type "Integer"] 0
 $End
-$THERMOCHEMISTRY_Energies
-   &GeometryIndex 1
-   &temperature [&Type "Double"]       2.9814999999999998e+02
-   &pressure [&Type "Double"]       1.0000000000000000e+00
-   &totalMass [&Type "Double"]       1.3038800000000001e+02
-   &spinDegeneracy [&Type "Integer"] 1
-   &elEnergy [&Type "Double"]      -1.2543361317030000e+01
-   &transEnergy [&Type "Double"]       1.4162714244859817e-03
-   &rotEnergy [&Type "Double"]       1.4162714244859817e-03
-   &vibEnergy [&Type "Double"]       1.8153288812487100e-03
-   &numOfFreqs [&Type "Integer"] 18
-   &freqScalingFactor [&Type "Double"]       1.0000000000000000e+00
-   &FREQ [&Type "ArrayOfDoubles", &Units "cm^-1", &Dim (18,1)] 
-                                                         0
-
-0                                      0.0000000000000000e+00
-1                                      0.0000000000000000e+00
-2                                      0.0000000000000000e+00
-3                                      0.0000000000000000e+00
-4                                      0.0000000000000000e+00
-5                                      0.0000000000000000e+00
-6                                     -3.5254198570559601e+02
-7                                      1.9616746013739251e+02
-8                                      2.0047445191939423e+02
-9                                      2.0686095688896728e+02
-10                                     1.0269064920981409e+03
-11                                     1.0275618146828201e+03
-12                                     1.0318124679691630e+03
-13                                     1.0555848716923592e+03
-14                                     1.3306542340190178e+03
-15                                     3.1189515721922853e+03
-16                                     3.2063956714285241e+03
-17                                     3.2268197287742901e+03
-   &zpe [&Type "Double"]       3.5603635932480115e-02
-   &innerEnergyU [&Type "Double"]      -1.2503109809367301e+01
-   &enthalpyH [&Type "Double"]      -1.2502165600325041e+01
-   &qEl [&Type "Double"]       0.0000000000000000e+00
-   &qRot [&Type "Double"]       1.0996054323939321e-02
-   &qVib [&Type "Double"]       3.1947413588196845e-03
-   &qTrans [&Type "Double"]       1.9247041860113716e-02
-   &entropyS [&Type "Double"]       3.3437837542872724e-02
-   &freeEnergyG [&Type "Double"]      -1.2535603437867914e+01
-   &isLinear [&Type "Boolean"] false
-$End
 $Calculation_Timings
    &GeometryIndex 1
-   &FREQ_NUM [&Type "Double"]       1.9443469999999998e+00
-   &XTB [&Type "Double"]       1.2566637999999998e+01
-   &XTBGRAD [&Type "Double"]       1.1254999999991577e-02
-   &SUM [&Type "Double"]       1.4522239999999989e+01
+   &XTB [&Type "Double"]       1.6642072999999993e+01
+   &XTBGRAD [&Type "Double"]       1.4771999999998009e-02
+   &SUM [&Type "Double"]       1.6656844999999990e+01
 $End

@@ -171,10 +171,10 @@ interface, adapt or use parts of their codes:
 
 
   ***********************************
-  * Starting time: Sun Mar 15 23:50:45 2026
-  * Host name:     midway3-login3.rcc.local
-  * Process ID:    3679247
-  * Working dir.:  /home/rzhu16/orca_TS_search/runs/da_i/TS_search
+  * Starting time: Mon Mar 16 14:17:40 2026
+  * Host name:     midway3-login4.rcc.local
+  * Process ID:    87866
+  * Working dir.:  /home/rzhu16/evans-polanyi-principle-validation/runs/da_i/TS_search
   ***********************************
 
 Your calculation utilizes the semiempirical GFN2-xTB method
@@ -499,7 +499,7 @@ CARTESIAN COORDINATES (A.U.)
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/15 at 23:50:49.407     
+ * started run on 2026/03/16 at 14:17:41.487     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -510,7 +510,7 @@ CARTESIAN COORDINATES (A.U.)
            -------------------------------------------------
 
           program call               : /software/orca-6.1.0-el8-x86_64/bin/otool_xtb da_i_XTB.xyz --grad -c 0 -u 0 -P 8 --namespace da_i --input da_i_XTB.input.tmp --acc 0.200000
-          hostname                   : midway3-login3.rcc.local
+          hostname                   : midway3-login4.rcc.local
           calculation namespace      : da_i
           coordinate file            : da_i_XTB.xyz
           omp threads                :                     8
@@ -606,14 +606,14 @@ CARTESIAN COORDINATES (A.U.)
                   HL-Gap            0.1062615 Eh            2.8915 eV
              Fermi-level           -0.3131536 Eh           -8.5213 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.040 sec
- SCC setup                      ...        0 min,  0.000 sec (  0.810%)
- Dispersion                     ...        0 min,  0.000 sec (  0.358%)
- classical contributions        ...        0 min,  0.000 sec (  0.194%)
- integral evaluation            ...        0 min,  0.033 sec ( 80.866%)
- iterations                     ...        0 min,  0.005 sec ( 13.238%)
- molecular gradient             ...        0 min,  0.002 sec (  4.128%)
- printout                       ...        0 min,  0.000 sec (  0.363%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.068 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.362%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.169%)
+ classical contributions        ...        0 min,  0.000 sec (  0.060%)
+ integral evaluation            ...        0 min,  0.061 sec ( 89.877%)
+ iterations                     ...        0 min,  0.005 sec (  6.767%)
+ molecular gradient             ...        0 min,  0.002 sec (  2.449%)
+ printout                       ...        0 min,  0.000 sec (  0.288%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
@@ -642,16 +642,16 @@ Property printout bound to 'properties.out'
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/15 at 23:50:49.527     
+ * finished run on 2026/03/16 at 14:17:41.646     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.119 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.424 sec
- * ratio c/w:     3.569 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.159 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.327 sec
+ * ratio c/w:     2.060 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.040 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.291 sec
- * ratio c/w:     7.185 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.068 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.229 sec
+ * ratio c/w:     3.350 speedup
 
 
 -------------------------   --------------------
@@ -793,7 +793,7 @@ MAX gradient                       ...    0.0058462360
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/15 at 23:50:49.536     
+ * started run on 2026/03/16 at 14:17:41.662     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -804,7 +804,7 @@ MAX gradient                       ...    0.0058462360
            -------------------------------------------------
 
           program call               : /software/orca-6.1.0-el8-x86_64/bin/otool_xtb da_i_XTB.xyz --hess -c 0 -u 0 -P 8 --namespace da_i --input da_i_XTB.input.tmp --acc 0.200000
-          hostname                   : midway3-login3.rcc.local
+          hostname                   : midway3-login4.rcc.local
           calculation namespace      : da_i
           coordinate file            : da_i_XTB.xyz
           omp threads                :                     8
@@ -891,14 +891,14 @@ CAMM data taken from xtbrestart
                   HL-Gap            0.1062615 Eh            2.8915 eV
              Fermi-level           -0.3131536 Eh           -8.5213 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.028 sec
- SCC setup                      ...        0 min,  0.000 sec (  0.701%)
- Dispersion                     ...        0 min,  0.000 sec (  0.341%)
- classical contributions        ...        0 min,  0.000 sec (  0.119%)
- integral evaluation            ...        0 min,  0.024 sec ( 87.169%)
- iterations                     ...        0 min,  0.002 sec (  6.422%)
- molecular gradient             ...        0 min,  0.001 sec (  4.785%)
- printout                       ...        0 min,  0.000 sec (  0.399%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.085 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.321%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.113%)
+ classical contributions        ...        0 min,  0.000 sec (  0.039%)
+ integral evaluation            ...        0 min,  0.081 sec ( 94.965%)
+ iterations                     ...        0 min,  0.002 sec (  2.693%)
+ molecular gradient             ...        0 min,  0.001 sec (  1.678%)
+ printout                       ...        0 min,  0.000 sec (  0.167%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
@@ -925,7 +925,7 @@ SCC accuracy         :   0.30000
 Hessian scale factor :   1.00000
 frozen atoms in %    :   0.00000    0
 RMS gradient         :   0.00771 !! INCOMPLETELY OPTIMIZED GEOMETRY !!
-estimated CPU  time      0.03 min
+estimated CPU  time      0.02 min
 estimated wall time      0.01 min
 
 writing file <hessian>.
@@ -963,20 +963,20 @@ imag cut-off (cm-1) :    5.00
 ########################################################################
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/15 at 23:50:49.839     
+ * finished run on 2026/03/16 at 14:17:42.055     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.303 sec
- *  cpu-time:     0 d,  0 h,  0 min,  1.007 sec
- * ratio c/w:     3.325 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.393 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  1.013 sec
+ * ratio c/w:     2.578 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.028 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.198 sec
- * ratio c/w:     7.163 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.085 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.186 sec
+ * ratio c/w:     2.175 speedup
  analytical hessian:
- * wall-time:     0 d,  0 h,  0 min,  0.255 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.724 sec
- * ratio c/w:     2.836 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.210 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.710 sec
+ * ratio c/w:     3.384 speedup
 
 
 -------------------------   --------------------
@@ -1838,19 +1838,19 @@ The optimization has not yet converged - more geometry cycles are needed
     ----------------------------------------------------------------------------
 
 Geometry step timings:
-Preparation and reading OPT file:      0.000 s ( 0.187 %)
-Internal coordinates            :      0.000 s ( 0.273 %)
-B/P matrices and projection     :      0.001 s ( 2.599 %)
-Hessian update/contruction      :      0.018 s (89.887 %)
-Making the step                 :      0.001 s ( 2.923 %)
-Converting the step to Cartesian:      0.000 s ( 0.384 %)
-Storing new data                :      0.000 s ( 0.480 %)
-Checking convergence            :      0.000 s ( 0.319 %)
-Final printing                  :      0.001 s ( 2.872 %)
-Total time                      :      0.020 s
+Preparation and reading OPT file:      0.000 s ( 0.198 %)
+Internal coordinates            :      0.000 s ( 0.292 %)
+B/P matrices and projection     :      0.001 s ( 2.419 %)
+Hessian update/contruction      :      0.019 s (88.704 %)
+Making the step                 :      0.001 s ( 3.469 %)
+Converting the step to Cartesian:      0.000 s ( 0.381 %)
+Storing new data                :      0.000 s ( 0.527 %)
+Checking convergence            :      0.000 s ( 0.386 %)
+Final printing                  :      0.001 s ( 3.610 %)
+Total time                      :      0.021 s
 
-Time for energy+gradient        :      0.129 s
-Time for complete geometry iter :      0.547 s
+Time for energy+gradient        :      0.176 s
+Time for complete geometry iter :      0.727 s
 
          *************************************************************
          *                GEOMETRY OPTIMIZATION CYCLE   2            *
@@ -1990,7 +1990,7 @@ CARTESIAN COORDINATES (A.U.)
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/15 at 23:50:49.957     
+ * started run on 2026/03/16 at 14:17:42.255     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -2001,7 +2001,7 @@ CARTESIAN COORDINATES (A.U.)
            -------------------------------------------------
 
           program call               : /software/orca-6.1.0-el8-x86_64/bin/otool_xtb da_i_XTB.xyz --grad -c 0 -u 0 -P 8 --namespace da_i --input da_i_XTB.input.tmp --acc 0.200000
-          hostname                   : midway3-login3.rcc.local
+          hostname                   : midway3-login4.rcc.local
           calculation namespace      : da_i
           coordinate file            : da_i_XTB.xyz
           omp threads                :                     8
@@ -2097,14 +2097,14 @@ CAMM data taken from xtbrestart
                   HL-Gap            0.1031783 Eh            2.8076 eV
              Fermi-level           -0.3136868 Eh           -8.5359 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.013 sec
- SCC setup                      ...        0 min,  0.000 sec (  1.490%)
- Dispersion                     ...        0 min,  0.000 sec (  0.675%)
- classical contributions        ...        0 min,  0.000 sec (  0.304%)
- integral evaluation            ...        0 min,  0.007 sec ( 55.229%)
- iterations                     ...        0 min,  0.004 sec ( 31.026%)
- molecular gradient             ...        0 min,  0.001 sec ( 10.316%)
- printout                       ...        0 min,  0.000 sec (  0.838%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.219 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.102%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.038%)
+ classical contributions        ...        0 min,  0.000 sec (  0.015%)
+ integral evaluation            ...        0 min,  0.213 sec ( 97.277%)
+ iterations                     ...        0 min,  0.004 sec (  1.839%)
+ molecular gradient             ...        0 min,  0.001 sec (  0.640%)
+ printout                       ...        0 min,  0.000 sec (  0.080%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
@@ -2133,16 +2133,16 @@ Property printout bound to 'properties.out'
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/15 at 23:50:49.983     
+ * finished run on 2026/03/16 at 14:17:42.490     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.026 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.176 sec
- * ratio c/w:     6.878 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.234 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.434 sec
+ * ratio c/w:     1.851 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.013 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.098 sec
- * ratio c/w:     7.531 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.219 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.351 sec
+ * ratio c/w:     1.605 speedup
 
 
 -------------------------   --------------------
@@ -2182,7 +2182,7 @@ CARTESIAN GRADIENT
   16   I   :    0.000100339   -0.001603216   -0.000722901
 
 Difference to translation invariance:
-           :   -0.0000000000   -0.0000000000   -0.0000000000
+           :   -0.0000000000   -0.0000000000    0.0000000000
 
 Difference to rotation invariance:
            :    0.0000000451    0.0000001371   -0.0000003099
@@ -2218,69 +2218,69 @@ Hessian has   1 negative eigenvalues
 Taking P-RFO step
 Searching for lambda that maximizes along the lowest mode
 TS mode is mode number   0 with eigenvalue  -0.08539313 and components:
-   1.   -0.12051270
-   2.    0.13711002
-   3.   -0.13221857
-   4.   -0.21899816
-   5.    0.53789189
-   6.   -0.00467936
-   7.   -0.00485560
-   8.    0.00196329
-   9.    0.00177590
-  10.   -0.00524910
-  11.   -0.00492566
-  12.   -0.00939100
-  13.   -0.00583611
-  14.   -0.00952789
-  15.   -0.03428616
-  16.    0.01608759
-  17.   -0.02695164
-  18.   -0.07569331
-  19.    0.03773328
-  20.    0.12528182
-  21.   -0.10383402
-  22.   -0.06409727
-  23.    0.13677126
-  24.   -0.00012817
-  25.    0.00229542
-  26.   -0.05292494
-  27.    0.12882587
-  28.    0.05850965
-  29.    0.00760841
-  30.    0.00604284
-  31.   -0.01787232
-  32.    0.12935280
-  33.    0.10319007
-  34.    0.06765749
-  35.    0.05407124
-  36.   -0.12467786
-  37.    0.07653116
-  38.   -0.10717228
-  39.   -0.06355589
-  40.    0.06667781
-  41.   -0.07737743
-  42.   -0.04090590
-  43.   -0.02262061
-  44.    0.08496311
-  45.    0.08440748
-  46.    0.21206066
-  47.   -0.08823798
-  48.    0.03941521
-  49.   -0.06474062
-  50.   -0.22423581
-  51.    0.04170769
-  52.    0.20120288
-  53.    0.04171503
-  54.    0.05291636
-  55.    0.07485124
-  56.    0.38083315
-  57.   -0.22138565
-  58.    0.24817549
-  59.    0.01542036
-  60.    0.04894699
-  61.   -0.08872798
-  62.    0.06014832
-  63.    0.00818841
+   1.    0.12051270
+   2.   -0.13711002
+   3.    0.13221857
+   4.    0.21899816
+   5.   -0.53789189
+   6.    0.00467936
+   7.    0.00485560
+   8.   -0.00196329
+   9.   -0.00177590
+  10.    0.00524910
+  11.    0.00492566
+  12.    0.00939100
+  13.    0.00583611
+  14.    0.00952789
+  15.    0.03428616
+  16.   -0.01608759
+  17.    0.02695164
+  18.    0.07569331
+  19.   -0.03773328
+  20.   -0.12528182
+  21.    0.10383402
+  22.    0.06409727
+  23.   -0.13677126
+  24.    0.00012817
+  25.   -0.00229542
+  26.    0.05292494
+  27.   -0.12882587
+  28.   -0.05850965
+  29.   -0.00760841
+  30.   -0.00604284
+  31.    0.01787232
+  32.   -0.12935280
+  33.   -0.10319007
+  34.   -0.06765749
+  35.   -0.05407124
+  36.    0.12467786
+  37.   -0.07653116
+  38.    0.10717228
+  39.    0.06355589
+  40.   -0.06667781
+  41.    0.07737743
+  42.    0.04090590
+  43.    0.02262061
+  44.   -0.08496311
+  45.   -0.08440748
+  46.   -0.21206066
+  47.    0.08823798
+  48.   -0.03941521
+  49.    0.06474062
+  50.    0.22423581
+  51.   -0.04170769
+  52.   -0.20120288
+  53.   -0.04171503
+  54.   -0.05291636
+  55.   -0.07485124
+  56.   -0.38083315
+  57.    0.22138565
+  58.   -0.24817549
+  59.   -0.01542036
+  60.   -0.04894699
+  61.    0.08872798
+  62.   -0.06014832
+  63.   -0.00818841
 
 Lambda that maximizes along the TS mode:       0.00000081
 Searching for lambda that minimizes along all other modes
@@ -2386,19 +2386,19 @@ The optimization has not yet converged - more geometry cycles are needed
     ----------------------------------------------------------------------------
 
 Geometry step timings:
-Preparation and reading OPT file:      0.000 s ( 1.293 %)
-Internal coordinates            :      0.000 s ( 1.594 %)
-B/P matrices and projection     :      0.000 s (20.896 %)
-Hessian update/contruction      :      0.000 s (21.327 %)
-Making the step                 :      0.001 s (23.309 %)
-Converting the step to Cartesian:      0.000 s ( 2.327 %)
-Storing new data                :      0.000 s ( 3.490 %)
-Checking convergence            :      0.000 s ( 2.154 %)
-Final printing                  :      0.001 s (23.481 %)
-Total time                      :      0.002 s
+Preparation and reading OPT file:      0.000 s ( 1.295 %)
+Internal coordinates            :      0.000 s ( 2.231 %)
+B/P matrices and projection     :      0.001 s (15.730 %)
+Hessian update/contruction      :      0.001 s (18.733 %)
+Making the step                 :      0.001 s (27.245 %)
+Converting the step to Cartesian:      0.000 s ( 2.975 %)
+Storing new data                :      0.000 s ( 3.939 %)
+Checking convergence            :      0.000 s ( 3.003 %)
+Final printing                  :      0.001 s (24.848 %)
+Total time                      :      0.004 s
 
-Time for energy+gradient        :      0.042 s
-Time for complete geometry iter :      0.046 s
+Time for energy+gradient        :      0.293 s
+Time for complete geometry iter :      0.340 s
 
          *************************************************************
          *                GEOMETRY OPTIMIZATION CYCLE   3            *
@@ -2538,7 +2538,7 @@ CARTESIAN COORDINATES (A.U.)
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/15 at 23:50:50.002     
+ * started run on 2026/03/16 at 14:17:42.559     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -2549,7 +2549,7 @@ CARTESIAN COORDINATES (A.U.)
            -------------------------------------------------
 
           program call               : /software/orca-6.1.0-el8-x86_64/bin/otool_xtb da_i_XTB.xyz --grad -c 0 -u 0 -P 8 --namespace da_i --input da_i_XTB.input.tmp --acc 0.200000
-          hostname                   : midway3-login3.rcc.local
+          hostname                   : midway3-login4.rcc.local
           calculation namespace      : da_i
           coordinate file            : da_i_XTB.xyz
           omp threads                :                     8
@@ -2616,9 +2616,9 @@ CAMM data taken from xtbrestart
    6    -21.4133463 -0.243586E-06  0.600E-03    2.69       4.2  T
    7    -21.4133464 -0.504714E-07  0.366E-03    2.69       6.8  T
    8    -21.4133465 -0.668989E-07  0.164E-03    2.69      15.2  T
-   9    -21.4133465 -0.882090E-08  0.320E-04    2.69      78.1  T
-  10    -21.4133465 -0.264137E-09  0.143E-04    2.69     174.8  T
-  11    -21.4133465 -0.282796E-11  0.883E-05    2.69     283.0  T
+   9    -21.4133465 -0.882091E-08  0.320E-04    2.69      78.1  T
+  10    -21.4133465 -0.264130E-09  0.143E-04    2.69     174.8  T
+  11    -21.4133465 -0.280664E-11  0.883E-05    2.69     283.0  T
 
    *** convergence criteria satisfied after 11 iterations ***
 
@@ -2644,21 +2644,21 @@ CAMM data taken from xtbrestart
                   HL-Gap            0.0987977 Eh            2.6884 eV
              Fermi-level           -0.3142947 Eh           -8.5524 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.012 sec
- SCC setup                      ...        0 min,  0.000 sec (  1.448%)
- Dispersion                     ...        0 min,  0.000 sec (  0.670%)
- classical contributions        ...        0 min,  0.000 sec (  0.193%)
- integral evaluation            ...        0 min,  0.007 sec ( 55.137%)
- iterations                     ...        0 min,  0.004 sec ( 30.924%)
- molecular gradient             ...        0 min,  0.001 sec ( 10.618%)
- printout                       ...        0 min,  0.000 sec (  0.888%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.194 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.108%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.048%)
+ classical contributions        ...        0 min,  0.000 sec (  0.014%)
+ integral evaluation            ...        0 min,  0.189 sec ( 97.167%)
+ iterations                     ...        0 min,  0.004 sec (  1.886%)
+ molecular gradient             ...        0 min,  0.001 sec (  0.692%)
+ printout                       ...        0 min,  0.000 sec (  0.076%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          :: total energy             -21.101255044169 Eh    ::
          :: gradient norm              0.000464944985 Eh/a0 ::
-         :: HOMO-LUMO gap              2.688422431028 eV    ::
+         :: HOMO-LUMO gap              2.688422431017 eV    ::
          ::.................................................::
          :: SCC energy               -21.413303932084 Eh    ::
          :: -> isotropic ES            0.004799849279 Eh    ::
@@ -2667,7 +2667,7 @@ CAMM data taken from xtbrestart
          :: -> dispersion             -0.014387552409 Eh    ::
          :: repulsion energy           0.312048887915 Eh    ::
          :: add. restraining           0.000000000000 Eh    ::
-         :: total charge              -0.000000000000 e     ::
+         :: total charge               0.000000000000 e     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -2676,20 +2676,20 @@ Property printout bound to 'properties.out'
            -------------------------------------------------
           | TOTAL ENERGY              -21.101255044169 Eh   |
           | GRADIENT NORM               0.000464944985 Eh/α |
-          | HOMO-LUMO GAP               2.688422431028 eV   |
+          | HOMO-LUMO GAP               2.688422431017 eV   |
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/15 at 23:50:50.025     
+ * finished run on 2026/03/16 at 14:17:42.775     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.022 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.152 sec
- * ratio c/w:     6.992 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.216 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.573 sec
+ * ratio c/w:     2.647 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.012 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.091 sec
- * ratio c/w:     7.558 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.195 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.503 sec
+ * ratio c/w:     2.583 speedup
 
 
 -------------------------   --------------------
@@ -2729,7 +2729,7 @@ CARTESIAN GRADIENT
   16   I   :    0.000032512   -0.000040534   -0.000077048
 
 Difference to translation invariance:
-           :   -0.0000000000   -0.0000000000   -0.0000000000
+           :    0.0000000000   -0.0000000000    0.0000000000
 
 Difference to rotation invariance:
            :    0.0000001825    0.0000001682   -0.0000003506
@@ -2932,19 +2932,19 @@ The optimization has not yet converged - more geometry cycles are needed
     ----------------------------------------------------------------------------
 
 Geometry step timings:
-Preparation and reading OPT file:      0.000 s ( 1.284 %)
-Internal coordinates            :      0.000 s ( 1.638 %)
-B/P matrices and projection     :      0.000 s (20.540 %)
-Hessian update/contruction      :      0.000 s (19.699 %)
-Making the step                 :      0.001 s (23.772 %)
-Converting the step to Cartesian:      0.000 s ( 2.125 %)
-Storing new data                :      0.000 s ( 3.409 %)
-Checking convergence            :      0.000 s ( 2.833 %)
-Final printing                  :      0.001 s (24.701 %)
-Total time                      :      0.002 s
+Preparation and reading OPT file:      0.000 s ( 1.168 %)
+Internal coordinates            :      0.000 s ( 1.738 %)
+B/P matrices and projection     :      0.001 s (14.422 %)
+Hessian update/contruction      :      0.001 s (17.463 %)
+Making the step                 :      0.001 s (25.312 %)
+Converting the step to Cartesian:      0.000 s ( 1.901 %)
+Storing new data                :      0.000 s ( 3.069 %)
+Checking convergence            :      0.000 s ( 2.988 %)
+Final printing                  :      0.001 s (31.912 %)
+Total time                      :      0.004 s
 
-Time for energy+gradient        :      0.037 s
-Time for complete geometry iter :      0.040 s
+Time for energy+gradient        :      0.306 s
+Time for complete geometry iter :      0.311 s
 
          *************************************************************
          *                GEOMETRY OPTIMIZATION CYCLE   4            *
@@ -3084,7 +3084,7 @@ CARTESIAN COORDINATES (A.U.)
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/15 at 23:50:50.043     
+ * started run on 2026/03/16 at 14:17:42.866     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -3095,7 +3095,7 @@ CARTESIAN COORDINATES (A.U.)
            -------------------------------------------------
 
           program call               : /software/orca-6.1.0-el8-x86_64/bin/otool_xtb da_i_XTB.xyz --grad -c 0 -u 0 -P 8 --namespace da_i --input da_i_XTB.input.tmp --acc 0.200000
-          hostname                   : midway3-login3.rcc.local
+          hostname                   : midway3-login4.rcc.local
           calculation namespace      : da_i
           coordinate file            : da_i_XTB.xyz
           omp threads                :                     8
@@ -3159,12 +3159,12 @@ CAMM data taken from xtbrestart
    3    -21.4130768 -0.638757E-05  0.305E-02    2.57       1.0  T
    4    -21.4130718  0.498991E-05  0.247E-02    2.57       1.0  T
    5    -21.4130804 -0.860351E-05  0.532E-03    2.57       4.7  T
-   6    -21.4130804 -0.543511E-08  0.351E-03    2.57       7.1  T
+   6    -21.4130804 -0.543513E-08  0.351E-03    2.57       7.1  T
    7    -21.4130804 -0.615885E-07  0.171E-03    2.57      14.7  T
-   8    -21.4130804 -0.243893E-08  0.124E-03    2.57      20.2  T
-   9    -21.4130804 -0.406581E-08  0.274E-04    2.57      91.2  T
-  10    -21.4130804 -0.614477E-09  0.126E-04    2.57     198.0  T
-  11    -21.4130804 -0.209965E-11  0.680E-05    2.57     367.6  T
+   8    -21.4130804 -0.243895E-08  0.124E-03    2.57      20.2  T
+   9    -21.4130804 -0.406577E-08  0.274E-04    2.57      91.2  T
+  10    -21.4130804 -0.614506E-09  0.126E-04    2.57     198.0  T
+  11    -21.4130804 -0.210676E-11  0.680E-05    2.57     367.6  T
 
    *** convergence criteria satisfied after 11 iterations ***
 
@@ -3190,21 +3190,21 @@ CAMM data taken from xtbrestart
                   HL-Gap            0.0945401 Eh            2.5726 eV
              Fermi-level           -0.3148204 Eh           -8.5667 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.015 sec
- SCC setup                      ...        0 min,  0.000 sec (  1.139%)
- Dispersion                     ...        0 min,  0.000 sec (  0.583%)
- classical contributions        ...        0 min,  0.000 sec (  0.160%)
- integral evaluation            ...        0 min,  0.009 sec ( 62.666%)
- iterations                     ...        0 min,  0.004 sec ( 26.092%)
- molecular gradient             ...        0 min,  0.001 sec (  8.481%)
- printout                       ...        0 min,  0.000 sec (  0.776%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.209 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.119%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.049%)
+ classical contributions        ...        0 min,  0.000 sec (  0.022%)
+ integral evaluation            ...        0 min,  0.190 sec ( 91.047%)
+ iterations                     ...        0 min,  0.016 sec (  7.601%)
+ molecular gradient             ...        0 min,  0.002 sec (  1.070%)
+ printout                       ...        0 min,  0.000 sec (  0.081%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          :: total energy             -21.101259933164 Eh    ::
          :: gradient norm              0.000522165291 Eh/a0 ::
-         :: HOMO-LUMO gap              2.572565747591 eV    ::
+         :: HOMO-LUMO gap              2.572565747575 eV    ::
          ::.................................................::
          :: SCC energy               -21.413037825515 Eh    ::
          :: -> isotropic ES            0.004794868661 Eh    ::
@@ -3213,7 +3213,7 @@ CAMM data taken from xtbrestart
          :: -> dispersion             -0.014332981828 Eh    ::
          :: repulsion energy           0.311777892351 Eh    ::
          :: add. restraining           0.000000000000 Eh    ::
-         :: total charge               0.000000000000 e     ::
+         :: total charge              -0.000000000000 e     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -3222,20 +3222,20 @@ Property printout bound to 'properties.out'
            -------------------------------------------------
           | TOTAL ENERGY              -21.101259933164 Eh   |
           | GRADIENT NORM               0.000522165291 Eh/α |
-          | HOMO-LUMO GAP               2.572565747591 eV   |
+          | HOMO-LUMO GAP               2.572565747575 eV   |
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/15 at 23:50:50.069     
+ * finished run on 2026/03/16 at 14:17:43.171     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.026 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.177 sec
- * ratio c/w:     6.920 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.303 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.531 sec
+ * ratio c/w:     1.750 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.015 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.114 sec
- * ratio c/w:     7.448 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.209 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.430 sec
+ * ratio c/w:     2.055 speedup
 
 
 -------------------------   --------------------
@@ -3275,7 +3275,7 @@ CARTESIAN GRADIENT
   16   I   :    0.000000614    0.000002133   -0.000009540
 
 Difference to translation invariance:
-           :   -0.0000000000    0.0000000000   -0.0000000000
+           :    0.0000000000    0.0000000000   -0.0000000000
 
 Difference to rotation invariance:
            :    0.0000001341    0.0000001130   -0.0000001866
@@ -3377,7 +3377,7 @@ MAX gradient                       ...    0.0002183508
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/15 at 23:50:50.081     
+ * started run on 2026/03/16 at 14:17:43.259     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -3388,7 +3388,7 @@ MAX gradient                       ...    0.0002183508
            -------------------------------------------------
 
           program call               : /software/orca-6.1.0-el8-x86_64/bin/otool_xtb da_i_XTB.xyz --hess -c 0 -u 0 -P 8 --namespace da_i --input da_i_XTB.input.tmp --acc 0.200000
-          hostname                   : midway3-login3.rcc.local
+          hostname                   : midway3-login4.rcc.local
           calculation namespace      : da_i
           coordinate file            : da_i_XTB.xyz
           omp threads                :                     8
@@ -3448,8 +3448,8 @@ CAMM data taken from xtbrestart
 
  iter      E             dE          RMSdq      gap      omega  full diag
    1    -21.4130804 -0.214131E+02  0.364E-05    2.57       0.0  T
-   2    -21.4130804 -0.232703E-11  0.257E-05    2.57     971.4  T
-   3    -21.4130804 -0.440536E-12  0.206E-05    2.57    1213.7  T
+   2    -21.4130804 -0.233058E-11  0.257E-05    2.57     971.4  T
+   3    -21.4130804 -0.429878E-12  0.206E-05    2.57    1213.7  T
 
    *** convergence criteria satisfied after 3 iterations ***
 
@@ -3475,21 +3475,21 @@ CAMM data taken from xtbrestart
                   HL-Gap            0.0945400 Eh            2.5726 eV
              Fermi-level           -0.3148202 Eh           -8.5667 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.011 sec
- SCC setup                      ...        0 min,  0.000 sec (  1.769%)
- Dispersion                     ...        0 min,  0.000 sec (  0.782%)
- classical contributions        ...        0 min,  0.000 sec (  0.231%)
- integral evaluation            ...        0 min,  0.007 sec ( 66.426%)
- iterations                     ...        0 min,  0.002 sec ( 16.031%)
- molecular gradient             ...        0 min,  0.001 sec ( 13.358%)
- printout                       ...        0 min,  0.000 sec (  1.226%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.079 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.312%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.153%)
+ classical contributions        ...        0 min,  0.000 sec (  0.048%)
+ integral evaluation            ...        0 min,  0.073 sec ( 92.934%)
+ iterations                     ...        0 min,  0.003 sec (  4.223%)
+ molecular gradient             ...        0 min,  0.002 sec (  2.063%)
+ printout                       ...        0 min,  0.000 sec (  0.236%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          :: total energy             -21.101259933178 Eh    ::
          :: gradient norm              0.000522164807 Eh/a0 ::
-         :: HOMO-LUMO gap              2.572564214622 eV    ::
+         :: HOMO-LUMO gap              2.572564214606 eV    ::
          ::.................................................::
          :: SCC energy               -21.413037825529 Eh    ::
          :: -> isotropic ES            0.004794841013 Eh    ::
@@ -3498,7 +3498,7 @@ CAMM data taken from xtbrestart
          :: -> dispersion             -0.014332984300 Eh    ::
          :: repulsion energy           0.311777892351 Eh    ::
          :: add. restraining           0.000000000000 Eh    ::
-         :: total charge               0.000000000000 e     ::
+         :: total charge              -0.000000000000 e     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
            ------------------------------------------------- 
@@ -3510,12 +3510,12 @@ Hessian scale factor :   1.00000
 frozen atoms in %    :   0.00000    0
 RMS gradient         :   0.00052
 estimated CPU  time      0.03 min
-estimated wall time      0.00 min
+estimated wall time      0.01 min
 
 writing file <hessian>.
 
  projected vibrational frequencies (cm⁻¹)
-eigval :       -0.00    -0.00    -0.00    -0.00     0.00     0.00
+eigval :       -0.00    -0.00     0.00     0.00     0.00     0.00
 eigval :     -522.90    59.64    95.64   137.60   255.02   314.65
 eigval :      355.52   416.45   491.24   527.94   555.59   715.69
 eigval :      731.47   795.94   875.85   925.71   936.26   966.41
@@ -3539,24 +3539,24 @@ imag cut-off (cm-1) :    5.00
           | TOTAL ENTHALPY            -20.965464048608 Eh   |
           | TOTAL FREE ENERGY         -21.008508408477 Eh   |
           | GRADIENT NORM               0.000522201070 Eh/α |
-          | HOMO-LUMO GAP               2.572563687030 eV   |
+          | HOMO-LUMO GAP               2.572563687015 eV   |
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/15 at 23:50:50.255     
+ * finished run on 2026/03/16 at 14:17:43.665     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.173 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.837 sec
- * ratio c/w:     4.830 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.406 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  1.089 sec
+ * ratio c/w:     2.684 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.011 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.082 sec
- * ratio c/w:     7.459 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.079 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.255 sec
+ * ratio c/w:     3.222 speedup
  analytical hessian:
- * wall-time:     0 d,  0 h,  0 min,  0.149 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.669 sec
- * ratio c/w:     4.488 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.300 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.718 sec
+ * ratio c/w:     2.394 speedup
 
 
 -------------------------   --------------------
@@ -4250,69 +4250,69 @@ Hessian has   1 negative eigenvalues
 Taking P-RFO step
 Searching for lambda that maximizes along the lowest mode
 TS mode is mode number   0 with eigenvalue  -0.07315423 and components:
-   1.   -0.12230506
-   2.    0.13063907
-   3.   -0.11140271
-   4.   -0.20386280
-   5.    0.53971949
-   6.   -0.00561100
-   7.   -0.00588743
-   8.    0.00296820
-   9.    0.00131145
-  10.   -0.00433615
-  11.   -0.00297984
-  12.   -0.01142756
-  13.   -0.00768242
-  14.   -0.00528092
-  15.   -0.03186521
-  16.    0.02027907
-  17.   -0.02887829
-  18.   -0.07840809
-  19.    0.04897710
-  20.    0.11560021
-  21.   -0.10935392
-  22.   -0.07182555
-  23.    0.15799332
-  24.   -0.00524934
-  25.    0.00668974
-  26.   -0.04639841
-  27.    0.11434879
-  28.    0.04627242
-  29.    0.00244645
-  30.    0.00399996
-  31.   -0.01753058
-  32.    0.10869718
-  33.    0.08329894
-  34.    0.07239299
-  35.    0.06074920
-  36.   -0.11884834
-  37.    0.08065601
-  38.   -0.10299668
-  39.   -0.07475952
-  40.    0.07304717
-  41.   -0.08493633
-  42.   -0.04192876
-  43.   -0.01198154
-  44.    0.10299439
-  45.    0.08774719
-  46.    0.22434363
-  47.   -0.09366309
-  48.    0.04293335
-  49.   -0.05172434
-  50.   -0.22225690
-  51.    0.01580931
-  52.    0.18634186
-  53.    0.04961088
-  54.    0.06729703
-  55.    0.09342015
-  56.    0.39435136
-  57.   -0.19905360
-  58.    0.26198618
-  59.    0.02099175
-  60.    0.05575355
-  61.   -0.06668842
-  62.    0.07343971
-  63.    0.01484908
+   1.    0.12230506
+   2.   -0.13063907
+   3.    0.11140271
+   4.    0.20386280
+   5.   -0.53971949
+   6.    0.00561100
+   7.    0.00588743
+   8.   -0.00296820
+   9.   -0.00131145
+  10.    0.00433615
+  11.    0.00297984
+  12.    0.01142756
+  13.    0.00768242
+  14.    0.00528092
+  15.    0.03186521
+  16.   -0.02027907
+  17.    0.02887829
+  18.    0.07840809
+  19.   -0.04897710
+  20.   -0.11560021
+  21.    0.10935392
+  22.    0.07182555
+  23.   -0.15799332
+  24.    0.00524934
+  25.   -0.00668974
+  26.    0.04639841
+  27.   -0.11434879
+  28.   -0.04627242
+  29.   -0.00244645
+  30.   -0.00399996
+  31.    0.01753058
+  32.   -0.10869718
+  33.   -0.08329894
+  34.   -0.07239299
+  35.   -0.06074920
+  36.    0.11884834
+  37.   -0.08065601
+  38.    0.10299668
+  39.    0.07475952
+  40.   -0.07304717
+  41.    0.08493633
+  42.    0.04192876
+  43.    0.01198154
+  44.   -0.10299439
+  45.   -0.08774719
+  46.   -0.22434363
+  47.    0.09366309
+  48.   -0.04293335
+  49.    0.05172434
+  50.    0.22225690
+  51.   -0.01580931
+  52.   -0.18634186
+  53.   -0.04961088
+  54.   -0.06729703
+  55.   -0.09342015
+  56.   -0.39435136
+  57.    0.19905360
+  58.   -0.26198618
+  59.   -0.02099175
+  60.   -0.05575355
+  61.    0.06668842
+  62.   -0.07343971
+  63.   -0.01484908
 
 Lambda that maximizes along the TS mode:       0.00000002
 Searching for lambda that minimizes along all other modes
@@ -4421,16 +4421,16 @@ Storing new coordinates                 .... done
     ----------------------------------------------------------------------------
 
 Geometry step timings:
-Preparation and reading OPT file:      0.000 s ( 0.178 %)
-Internal coordinates            :      0.000 s ( 0.209 %)
-B/P matrices and projection     :      0.000 s ( 2.494 %)
-Hessian update/contruction      :      0.018 s (90.201 %)
-Making the step                 :      0.001 s ( 2.769 %)
-Converting the step to Cartesian:      0.000 s ( 0.260 %)
-Storing new data                :      0.000 s ( 0.458 %)
-Checking convergence            :      0.000 s ( 0.300 %)
-Final printing                  :      0.001 s ( 3.131 %)
-Total time                      :      0.020 s
+Preparation and reading OPT file:      0.000 s ( 0.278 %)
+Internal coordinates            :      0.000 s ( 0.386 %)
+B/P matrices and projection     :      0.001 s ( 3.702 %)
+Hessian update/contruction      :      0.018 s (86.754 %)
+Making the step                 :      0.001 s ( 3.438 %)
+Converting the step to Cartesian:      0.000 s ( 0.320 %)
+Storing new data                :      0.000 s ( 0.541 %)
+Checking convergence            :      0.000 s ( 0.428 %)
+Final printing                  :      0.001 s ( 4.149 %)
+Total time                      :      0.021 s
                  *******************************************************
                  *** FINAL ENERGY EVALUATION AT THE STATIONARY POINT ***
                  ***               (AFTER    4 CYCLES)               ***
@@ -4570,7 +4570,7 @@ CARTESIAN COORDINATES (A.U.)
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/15 at 23:50:50.372     
+ * started run on 2026/03/16 at 14:17:43.852     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -4581,7 +4581,7 @@ CARTESIAN COORDINATES (A.U.)
            -------------------------------------------------
 
           program call               : /software/orca-6.1.0-el8-x86_64/bin/otool_xtb da_i_XTB.xyz --grad -c 0 -u 0 -P 8 --namespace da_i --input da_i_XTB.input.tmp --acc 0.200000
-          hostname                   : midway3-login3.rcc.local
+          hostname                   : midway3-login4.rcc.local
           calculation namespace      : da_i
           coordinate file            : da_i_XTB.xyz
           omp threads                :                     8
@@ -4645,9 +4645,9 @@ CAMM data taken from xtbrestart
    3    -21.4129119  0.756468E-07  0.344E-03    2.57       7.3  T
    4    -21.4129119 -0.586396E-07  0.219E-03    2.57      11.4  T
    5    -21.4129120 -0.679383E-07  0.488E-04    2.57      51.3  T
-   6    -21.4129120 -0.357474E-10  0.313E-04    2.57      79.9  T
-   7    -21.4129120 -0.367411E-09  0.167E-04    2.57     149.5  T
-   8    -21.4129120 -0.894218E-10  0.982E-05    2.57     254.6  T
+   6    -21.4129120 -0.357794E-10  0.313E-04    2.57      79.9  T
+   7    -21.4129120 -0.367368E-09  0.167E-04    2.57     149.5  T
+   8    -21.4129120 -0.894183E-10  0.982E-05    2.57     254.6  T
 
    *** convergence criteria satisfied after 8 iterations ***
 
@@ -4673,21 +4673,21 @@ CAMM data taken from xtbrestart
                   HL-Gap            0.0942705 Eh            2.5652 eV
              Fermi-level           -0.3148477 Eh           -8.5674 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.043 sec
- SCC setup                      ...        0 min,  0.000 sec (  0.440%)
- Dispersion                     ...        0 min,  0.000 sec (  0.197%)
- classical contributions        ...        0 min,  0.000 sec (  0.083%)
- integral evaluation            ...        0 min,  0.038 sec ( 88.390%)
- iterations                     ...        0 min,  0.003 sec (  6.938%)
- molecular gradient             ...        0 min,  0.002 sec (  3.635%)
- printout                       ...        0 min,  0.000 sec (  0.273%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.086 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.255%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.106%)
+ classical contributions        ...        0 min,  0.000 sec (  0.043%)
+ integral evaluation            ...        0 min,  0.023 sec ( 26.895%)
+ iterations                     ...        0 min,  0.003 sec (  3.865%)
+ molecular gradient             ...        0 min,  0.059 sec ( 68.517%)
+ printout                       ...        0 min,  0.000 sec (  0.288%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          :: total energy             -21.101260325706 Eh    ::
          :: gradient norm              0.000001411349 Eh/a0 ::
-         :: HOMO-LUMO gap              2.565229880580 eV    ::
+         :: HOMO-LUMO gap              2.565229880577 eV    ::
          ::.................................................::
          :: SCC energy               -21.412869345425 Eh    ::
          :: -> isotropic ES            0.004792240562 Eh    ::
@@ -4696,7 +4696,7 @@ CAMM data taken from xtbrestart
          :: -> dispersion             -0.014331281314 Eh    ::
          :: repulsion energy           0.311609019719 Eh    ::
          :: add. restraining           0.000000000000 Eh    ::
-         :: total charge               0.000000000000 e     ::
+         :: total charge              -0.000000000000 e     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -4705,20 +4705,20 @@ Property printout bound to 'properties.out'
            -------------------------------------------------
           | TOTAL ENERGY              -21.101260325706 Eh   |
           | GRADIENT NORM               0.000001411349 Eh/α |
-          | HOMO-LUMO GAP               2.565229880580 eV   |
+          | HOMO-LUMO GAP               2.565229880577 eV   |
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/15 at 23:50:50.434     
+ * finished run on 2026/03/16 at 14:17:43.962     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.062 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.309 sec
- * ratio c/w:     5.022 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.109 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.343 sec
+ * ratio c/w:     3.151 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.043 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.239 sec
- * ratio c/w:     5.505 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.086 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.268 sec
+ * ratio c/w:     3.121 speedup
 
 
 -------------------------   --------------------
@@ -4831,7 +4831,7 @@ Magnitude (Debye)      :      3.62574
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/15 at 23:50:50.451     
+ * started run on 2026/03/16 at 14:17:44.058     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -4842,7 +4842,7 @@ Magnitude (Debye)      :      3.62574
            -------------------------------------------------
 
           program call               : /software/orca-6.1.0-el8-x86_64/bin/otool_xtb da_i_XTB.xyz --hess -c 0 -u 0 -P 8 --namespace da_i --input da_i_XTB.input.tmp --acc 0.200000
-          hostname                   : midway3-login3.rcc.local
+          hostname                   : midway3-login4.rcc.local
           calculation namespace      : da_i
           coordinate file            : da_i_XTB.xyz
           omp threads                :                     8
@@ -4902,8 +4902,8 @@ CAMM data taken from xtbrestart
 
  iter      E             dE          RMSdq      gap      omega  full diag
    1    -21.4129120 -0.214129E+02  0.286E-05    2.57       0.0  T
-   2    -21.4129120 -0.200728E-11  0.202E-05    2.57    1239.4  T
-   3    -21.4129120 -0.139266E-11  0.174E-05    2.57    1436.5  T
+   2    -21.4129120 -0.199663E-11  0.202E-05    2.57    1239.4  T
+   3    -21.4129120 -0.137845E-11  0.174E-05    2.57    1436.5  T
 
    *** convergence criteria satisfied after 3 iterations ***
 
@@ -4929,21 +4929,21 @@ CAMM data taken from xtbrestart
                   HL-Gap            0.0942705 Eh            2.5652 eV
              Fermi-level           -0.3148476 Eh           -8.5674 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.059 sec
- SCC setup                      ...        0 min,  0.000 sec (  0.297%)
- Dispersion                     ...        0 min,  0.000 sec (  0.148%)
- classical contributions        ...        0 min,  0.000 sec (  0.054%)
- integral evaluation            ...        0 min,  0.029 sec ( 49.887%)
- iterations                     ...        0 min,  0.002 sec (  2.774%)
- molecular gradient             ...        0 min,  0.027 sec ( 46.627%)
- printout                       ...        0 min,  0.000 sec (  0.183%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.165 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.128%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.055%)
+ classical contributions        ...        0 min,  0.000 sec (  0.020%)
+ integral evaluation            ...        0 min,  0.088 sec ( 53.533%)
+ iterations                     ...        0 min,  0.002 sec (  1.067%)
+ molecular gradient             ...        0 min,  0.074 sec ( 45.071%)
+ printout                       ...        0 min,  0.000 sec (  0.115%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          :: total energy             -21.101260325721 Eh    ::
          :: gradient norm              0.000001305120 Eh/a0 ::
-         :: HOMO-LUMO gap              2.565230807858 eV    ::
+         :: HOMO-LUMO gap              2.565230807855 eV    ::
          ::.................................................::
          :: SCC energy               -21.412869345440 Eh    ::
          :: -> isotropic ES            0.004792291285 Eh    ::
@@ -4963,13 +4963,13 @@ SCC accuracy         :   0.30000
 Hessian scale factor :   1.00000
 frozen atoms in %    :   0.00000    0
 RMS gradient         :   0.00000
-estimated CPU  time      0.02 min
-estimated wall time      0.00 min
+estimated CPU  time      0.03 min
+estimated wall time      0.01 min
 
 writing file <hessian>.
 
  projected vibrational frequencies (cm⁻¹)
-eigval :       -0.00    -0.00     0.00     0.00     0.00     0.00
+eigval :       -0.00    -0.00    -0.00     0.00     0.00     0.00
 eigval :     -522.35    59.35    95.40   137.47   255.07   314.83
 eigval :      355.49   416.55   491.29   527.87   555.73   714.82
 eigval :      730.75   795.89   875.79   925.41   936.09   966.37
@@ -4993,24 +4993,24 @@ imag cut-off (cm-1) :    5.00
           | TOTAL ENTHALPY            -20.965477756737 Eh   |
           | TOTAL FREE ENERGY         -21.008526990081 Eh   |
           | GRADIENT NORM               0.000001466866 Eh/α |
-          | HOMO-LUMO GAP               2.565230371065 eV   |
+          | HOMO-LUMO GAP               2.565230371062 eV   |
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/15 at 23:50:50.660     
+ * finished run on 2026/03/16 at 14:17:44.473     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.208 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.963 sec
- * ratio c/w:     4.617 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.414 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  1.086 sec
+ * ratio c/w:     2.620 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.059 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.258 sec
- * ratio c/w:     4.364 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.165 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.307 sec
+ * ratio c/w:     1.861 speedup
  analytical hessian:
- * wall-time:     0 d,  0 h,  0 min,  0.130 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.624 sec
- * ratio c/w:     4.811 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.217 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.678 sec
+ * ratio c/w:     3.128 speedup
 
 
 -------------------------   --------------------
@@ -5746,8 +5746,8 @@ List of optional additional citations
 
 Timings for individual modules:
 
-Sum of individual times          ...        1.063 sec (=   0.018 min)
-Geometry relaxation              ...        0.049 sec (=   0.001 min)   4.7 %
-XTB module                       ...        1.013 sec (=   0.017 min)  95.3 %
+Sum of individual times          ...        2.547 sec (=   0.042 min)
+Geometry relaxation              ...        0.056 sec (=   0.001 min)   2.2 %
+XTB module                       ...        2.491 sec (=   0.042 min)  97.8 %
                              ****ORCA TERMINATED NORMALLY****
-TOTAL RUN TIME: 0 days 0 hours 0 minutes 5 seconds 369 msec
+TOTAL RUN TIME: 0 days 0 hours 0 minutes 3 seconds 936 msec

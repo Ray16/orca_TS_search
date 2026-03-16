@@ -2,8 +2,9 @@
 
 %geom
   Calc_Hess true
-  Recalc_Hess 5
-  MaxIter 100
+  Recalc_Hess 3
+  MaxIter 200
+  Trust -0.1
 end
 
 * xyz -1 1

@@ -6,6 +6,8 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 
+from workflow_utils import should_swap_rp
+
 HARTREE_TO_KCAL = 627.509474
 
 
@@ -90,14 +92,24 @@ def collect_data(root_dir, systems):
             print(f"  Skipping {sysname}: missing {', '.join(missing)} enthalpy")
             continue
 
-        # For Diels-Alder (always exothermic), product must have lower enthalpy.
-        # IRC endpoint ordering can vary; swap if needed.
-        if sysname.startswith("da_") and h_react < h_prod:
+        # Determine correct reactant/product assignment.
+        # The IRC backward/forward direction is arbitrary, so the labels from
+        # step 7 may be swapped.  Use endpoint geometry to fix:
+        #  - SN2: nucleophile should be far from C in reactant
+        #  - DA:  product (cyclohexene ring) has more C-C bonds than reactant
+        swap = should_swap_rp(sysname, sys_dir)
+        if swap:
             h_react, h_prod = h_prod, h_react
-            print(f"  Note: swapped reactant/product for {sysname} (reactant had lower H)")
+            print(f"  Note: swapped reactant/product for {sysname}")
 
         ea_kcal = (h_ts - h_react) * HARTREE_TO_KCAL
         dh_kcal = (h_prod - h_react) * HARTREE_TO_KCAL
+
+        # Clamp Ea to zero for barrierless reactions (small negative values
+        # are numerical noise from the optimization).
+        if ea_kcal < 0:
+            print(f"  Note: Ea = {ea_kcal:.2f} kcal/mol for {sysname}, clamping to 0 (barrierless)")
+            ea_kcal = 0.0
 
         rows.append({
             "system": sysname,
@@ -301,11 +313,10 @@ def main():
                              "dH_kcal": f"{r['dH_kcal']:.4f}"})
     print(f"Wrote Ea/dH table: {ea_dh_path}")
 
-    # Run Polanyi analysis separately for sn2 and e2 families, then combined
+    # Run Polanyi analysis separately per reaction family
     families = {
         "sn2": [r for r in all_rows if r["system"].startswith("sn2_")],
         "da":  [r for r in all_rows if r["system"].startswith("da_")],
-        "all": all_rows,
     }
 
     for family, rows in families.items():

@@ -13,16 +13,16 @@ $Geometry
    &NCorelessECP [&Type "Integer"] 0
    &NGhostAtoms [&Type "Integer"] 0
    &CartesianCoordinates [&Type "Coordinates", &Dim(6,4), &Units "Bohr"] 
-              C      0.000000012589    0.000000167927    0.076467756550
-              H      0.000000007006    2.014241487463    0.144897346044
-              H      1.744384194123   -1.007120351844    0.144897855516
-              H     -1.744384179344   -1.007120351402    0.144897858067
-              Cl    -0.000000025034    0.000000517019    4.331271870149
-              I     -0.000000009340   -0.000001469162   -4.773268709826
+              C     -0.000000003266    0.000000014040    0.076411217182
+              H     -0.000000003892    2.014240115698    0.144895423581
+              H      1.744383087867   -1.007120006942    0.144896016940
+              H     -1.744383095463   -1.007120006837    0.144896008829
+              Cl    -0.000000001237    0.000000996334    4.331263065967
+              I      0.000000015991   -0.000001112294   -4.773197755997
 $End
 $Single_Point_Data
    &GeometryIndex 1
-   &FinalEnergy [&Type "Double"]      -1.2272091358510000e+01  "Final single point energy"
+   &FinalEnergy [&Type "Double"]      -1.2272091358460001e+01  "Final single point energy"
    &Converged [&Type "Boolean"] true
 $End
 $Calculation_Info
@@ -37,54 +37,9 @@ $Calculation_Info
    &NumOfAuxJKBasisFuncts [&Type "Integer"] 0
    &NumOfCABSBasisFuncts [&Type "Integer"] 0
 $End
-$THERMOCHEMISTRY_Energies
-   &GeometryIndex 1
-   &temperature [&Type "Double"]       2.9814999999999998e+02
-   &pressure [&Type "Double"]       1.0000000000000000e+00
-   &totalMass [&Type "Double"]       1.7738800000000001e+02
-   &spinDegeneracy [&Type "Integer"] 1
-   &elEnergy [&Type "Double"]      -1.2272091358510000e+01
-   &transEnergy [&Type "Double"]       1.4162714244859817e-03
-   &rotEnergy [&Type "Double"]       1.4162714244859817e-03
-   &vibEnergy [&Type "Double"]       1.8643553110645437e-03
-   &numOfFreqs [&Type "Integer"] 18
-   &freqScalingFactor [&Type "Double"]       1.0000000000000000e+00
-   &FREQ [&Type "ArrayOfDoubles", &Units "cm^-1", &Dim (18,1)] 
-                                                         0
-
-0                                      0.0000000000000000e+00
-1                                      0.0000000000000000e+00
-2                                      0.0000000000000000e+00
-3                                      0.0000000000000000e+00
-4                                      0.0000000000000000e+00
-5                                      0.0000000000000000e+00
-6                                     -3.5248686101515773e+02
-7                                      1.8673869766049032e+02
-8                                      1.9037747818735775e+02
-9                                      1.9737313398054118e+02
-10                                     1.0135124906946236e+03
-11                                     1.0194521433790793e+03
-12                                     1.0247363453205812e+03
-13                                     1.0589945376441874e+03
-14                                     1.3343943301155680e+03
-15                                     3.1369419786594549e+03
-16                                     3.2240604094138876e+03
-17                                     3.2443084055119566e+03
-   &zpe [&Type "Double"]       3.5609787506245737e-02
-   &innerEnergyU [&Type "Double"]      -1.2231784672843718e+01
-   &enthalpyH [&Type "Double"]      -1.2230840463801458e+01
-   &qEl [&Type "Double"]       0.0000000000000000e+00
-   &qRot [&Type "Double"]       1.1209094764200490e-02
-   &qVib [&Type "Double"]       3.3248423438859026e-03
-   &qTrans [&Type "Double"]       1.9683005332529695e-02
-   &entropyS [&Type "Double"]       3.4216942440616085e-02
-   &freeEnergyG [&Type "Double"]      -1.2265057406242075e+01
-   &isLinear [&Type "Boolean"] false
-$End
 $Calculation_Timings
    &GeometryIndex 1
-   &FREQ_NUM [&Type "Double"]       2.1393360000000001e+00
-   &XTB [&Type "Double"]       1.4838999000000012e+01
-   &XTBGRAD [&Type "Double"]       1.5594999999995141e-02
-   &SUM [&Type "Double"]       1.6993930000000006e+01
+   &XTB [&Type "Double"]       1.9341915000000004e+01
+   &XTBGRAD [&Type "Double"]       1.3901000000006158e-02
+   &SUM [&Type "Double"]       1.9355816000000011e+01
 $End

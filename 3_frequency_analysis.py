@@ -164,10 +164,10 @@ def plot_combined_frequencies(systems_data, output_path, nrows, ncols, title):
         real = df[df["Frequency"] >= 0]
 
         if not real.empty:
-            ax.stem(real["Index"], real["Frequency"],
+            ax.stem(real["Index"].to_numpy(), real["Frequency"].to_numpy(),
                     linefmt="b-", markerfmt="bo", basefmt="k-", label="Real")
         if not imaginary.empty:
-            ax.stem(imaginary["Index"], imaginary["Frequency"],
+            ax.stem(imaginary["Index"].to_numpy(), imaginary["Frequency"].to_numpy(),
                     linefmt="r-", markerfmt="ro", basefmt="k-", label="Imag")
             for _, row in imaginary.iterrows():
                 ax.annotate(f"{row['Frequency']:.0f}", (row["Index"], row["Frequency"]),
@@ -175,6 +175,10 @@ def plot_combined_frequencies(systems_data, output_path, nrows, ncols, title):
                             ha="center", color="red", fontsize=7, weight="bold")
 
         ax.axhline(0, color="black", linewidth=0.8)
+        # Extend y-axis downward so imaginary frequency labels don't overlap x-axis
+        if not imaginary.empty:
+            ymin = imaginary["Frequency"].min()
+            ax.set_ylim(bottom=min(ymin * 2.5, ymin - 300))
         short = re.sub(r"^(sn2|da)_", "", sysname).replace("_", u"\u2192")
         ax.set_title(short, fontsize=9, fontweight="bold")
         ax.set_xlabel("Mode", fontsize=7)
@@ -245,7 +249,9 @@ def main():
         if input_file is None:
             continue
         df = extract_frequencies(input_file)
-        csv_file = os.path.join(output_dir, f"{sysname}_frequencies.csv")
+        freq_csv_dir = os.path.join(output_dir, "frequency")
+        os.makedirs(freq_csv_dir, exist_ok=True)
+        csv_file = os.path.join(freq_csv_dir, f"{sysname}_frequencies.csv")
         if df is not None and not df.empty:
             df.to_csv(csv_file, index=False)
             print(f"Frequencies saved to {csv_file}")
@@ -257,6 +263,12 @@ def main():
         if sn2_data:
             plot_combined_frequencies(sn2_data, os.path.join(output_dir, "sn2_frequencies_combined.png"),
                                       nrows=4, ncols=3, title="SN2 Vibrational Frequencies")
+
+        da_data = [(s, d) for s, d in collected if s.startswith("da_")]
+        da_data.sort(key=lambda x: x[0])
+        if da_data:
+            plot_combined_frequencies(da_data, os.path.join(output_dir, "da_frequencies_combined.png"),
+                                      nrows=2, ncols=2, title="Diels-Alder Vibrational Frequencies")
     else:
         for sysname, df in collected:
             plot_file = os.path.join(output_dir, f"{sysname}_frequency_plot.png")

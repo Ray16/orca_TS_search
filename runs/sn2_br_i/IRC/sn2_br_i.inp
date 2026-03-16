@@ -3,6 +3,8 @@
 %irc
   Direction both
   MaxIter 20
+  InitHess read
+  Hess_Filename "../TS_search/sn2_br_i.hess"
 end
 
 * xyzfile -1 1 ../TS_search/sn2_br_i.xyz

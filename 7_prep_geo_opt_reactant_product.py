@@ -1,8 +1,12 @@
 import argparse
+import math
 import os
 import re
 
 from workflow_utils import resolve_system_dir
+
+# Map element keys used in system names to full element symbols
+_HALOGEN_ELEMENT = {"f": "F", "cl": "Cl", "br": "Br", "i": "I", "h": "H"}
 
 
 def parse_charge_mult(inp_path):
@@ -102,6 +106,89 @@ def write_xyz(path, natoms, comment, atoms):
         f.write("\n")
 
 
+def _parse_atom_coords(atom_lines):
+    """Parse atom lines into list of (element, x, y, z)."""
+    atoms = []
+    for line in atom_lines:
+        parts = line.split()
+        atoms.append((parts[0], float(parts[1]), float(parts[2]), float(parts[3])))
+    return atoms
+
+
+def _dist(a, b):
+    return math.sqrt((a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2 + (a[3] - b[3]) ** 2)
+
+
+def _find_atom(atoms, element):
+    for a in atoms:
+        if a[0].upper() == element.upper():
+            return a
+    return None
+
+
+def _extract_energy_from_comment(comment):
+    """Extract energy from IRC trajectory comment line."""
+    m = re.search(r"\bE\s+(-?\d+\.\d+)", comment)
+    return float(m.group(1)) if m else None
+
+
+def _should_swap_endpoints(sysname, endpoint_a, endpoint_b):
+    """Determine if IRC endpoints need swapping so that endpoint_a is the
+    true reactant and endpoint_b is the true product.
+
+    For SN2 (sn2_{nuc}_{lg}): the true reactant has the leaving group bonded
+    to C and the nucleophile far from C.  If endpoint_a has the nucleophile
+    closer to C, it's actually the product — swap needed.
+
+    For DA: always exothermic, so the true reactant has higher energy.
+    If endpoint_a has lower energy, it's the product — swap needed.
+
+    Returns True if swap needed, False otherwise.
+    """
+    _, comment_a, atoms_a_lines = endpoint_a
+    _, comment_b, atoms_b_lines = endpoint_b
+
+    m = re.match(r"sn2_([a-z]+)_([a-z]+)", sysname)
+    if m:
+        nuc_elem = _HALOGEN_ELEMENT.get(m.group(1))
+        lg_elem = _HALOGEN_ELEMENT.get(m.group(2))
+        if nuc_elem and lg_elem and nuc_elem != lg_elem:
+            atoms = _parse_atom_coords(atoms_a_lines)
+            c_atom = _find_atom(atoms, "C")
+            nuc_atom = _find_atom(atoms, nuc_elem)
+            lg_atom = _find_atom(atoms, lg_elem)
+            if all([c_atom, nuc_atom, lg_atom]):
+                d_nuc = _dist(c_atom, nuc_atom)
+                d_lg = _dist(c_atom, lg_atom)
+                # True reactant: nuc far from C, lg close to C
+                # If nuc is closer, this endpoint is the product
+                return d_nuc < d_lg
+        return False
+
+    if sysname.startswith("da_"):
+        # DA product (cyclohexene) has more C-C bonds than the reactant
+        # (separated diene + dienophile).  Count C-C bonds < 2.0 Å in each
+        # endpoint: the one with more is the product.
+        atoms_a = _parse_atom_coords(atoms_a_lines)
+        atoms_b = _parse_atom_coords(atoms_b_lines)
+
+        def _count_cc_bonds(atoms):
+            carbons = [a for a in atoms if a[0] == "C"]
+            count = 0
+            for i in range(len(carbons)):
+                for j in range(i + 1, len(carbons)):
+                    if _dist(carbons[i], carbons[j]) < 2.0:
+                        count += 1
+            return count
+
+        cc_a = _count_cc_bonds(atoms_a)
+        cc_b = _count_cc_bonds(atoms_b)
+        # If endpoint_a has more C-C bonds, it's the product (ring) → swap
+        return cc_a > cc_b
+
+    return False
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Prepare ORCA Opt+Freq inputs for reactant/product from IRC trajectory endpoints."
@@ -129,8 +216,16 @@ def main():
 
     irc_xyz = args.irc_xyz or os.path.join(system_dir, "IRC", f"{sysname}_IRC_Full_trj.xyz")
     frames = read_multiframe_xyz(irc_xyz)
-    reactant = frames[0]
-    product = frames[-1]
+    endpoint_a = frames[0]
+    endpoint_b = frames[-1]
+
+    if _should_swap_endpoints(sysname, endpoint_a, endpoint_b):
+        reactant = endpoint_b
+        product = endpoint_a
+        print(f"  Note: swapped IRC endpoints for {sysname} (geometry-based)")
+    else:
+        reactant = endpoint_a
+        product = endpoint_b
 
     ts_inp = find_ts_input(system_dir)
     charge, mult = parse_charge_mult(ts_inp)

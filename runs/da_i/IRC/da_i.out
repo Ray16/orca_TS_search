@@ -171,10 +171,10 @@ interface, adapt or use parts of their codes:
 
 
   ***********************************
-  * Starting time: Mon Mar 16 12:21:14 2026
+  * Starting time: Mon Mar 16 14:17:44 2026
   * Host name:     midway3-login4.rcc.local
-  * Process ID:    3610498
-  * Working dir.:  /home/rzhu16/orca_TS_search/runs/da_i/IRC
+  * Process ID:    88301
+  * Working dir.:  /home/rzhu16/evans-polanyi-principle-validation/runs/da_i/IRC
   ***********************************
 
 
@@ -332,7 +332,7 @@ NAME = da_i.inp
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2026/03/16 at 12:21:17.972     
+ * started run on 2026/03/16 at 14:17:45.468     
    ID    Z sym.   atoms
     1    6 C      1-6
     2    1 H      7-15
@@ -412,9 +412,9 @@ NAME = da_i.inp
   10    -21.4129113  0.123587E-06  0.873E-03    2.56       2.9  T
   11    -21.4129119 -0.607343E-06  0.337E-03    2.57       7.4  T
   12    -21.4129120 -0.637583E-07  0.109E-03    2.57      22.8  T
-  13    -21.4129120 -0.299860E-08  0.254E-04    2.57      98.3  T
-  14    -21.4129120 -0.340350E-09  0.159E-04    2.57     157.1  T
-  15    -21.4129120 -0.358789E-10  0.693E-05    2.57     360.9  T
+  13    -21.4129120 -0.299858E-08  0.254E-04    2.57      98.3  T
+  14    -21.4129120 -0.340361E-09  0.159E-04    2.57     157.1  T
+  15    -21.4129120 -0.358860E-10  0.693E-05    2.57     360.9  T
 
    *** convergence criteria satisfied after 15 iterations ***
 
@@ -440,21 +440,21 @@ NAME = da_i.inp
                   HL-Gap            0.0942705 Eh            2.5652 eV
              Fermi-level           -0.3148475 Eh           -8.5674 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.068 sec
- SCC setup                      ...        0 min,  0.000 sec (  0.580%)
- Dispersion                     ...        0 min,  0.000 sec (  0.220%)
- classical contributions        ...        0 min,  0.000 sec (  0.140%)
- integral evaluation            ...        0 min,  0.015 sec ( 22.608%)
- iterations                     ...        0 min,  0.050 sec ( 73.303%)
- molecular gradient             ...        0 min,  0.002 sec (  2.819%)
- printout                       ...        0 min,  0.000 sec (  0.300%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.084 sec
+ SCC setup                      ...        0 min,  0.000 sec (  0.331%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.109%)
+ classical contributions        ...        0 min,  0.000 sec (  0.037%)
+ integral evaluation            ...        0 min,  0.076 sec ( 89.614%)
+ iterations                     ...        0 min,  0.007 sec (  7.750%)
+ molecular gradient             ...        0 min,  0.002 sec (  1.870%)
+ printout                       ...        0 min,  0.000 sec (  0.262%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          :: total energy             -21.101260325706 Eh    ::
          :: gradient norm              0.000001311244 Eh/a0 ::
-         :: HOMO-LUMO gap              2.565230960662 eV    ::
+         :: HOMO-LUMO gap              2.565230960659 eV    ::
          ::.................................................::
          :: SCC energy               -21.412869345425 Eh    ::
          :: -> isotropic ES            0.004792366753 Eh    ::
@@ -472,20 +472,20 @@ Property printout bound to 'properties.out'
            -------------------------------------------------
           | TOTAL ENERGY              -21.101260325706 Eh   |
           | GRADIENT NORM               0.000001311244 Eh/α |
-          | HOMO-LUMO GAP               2.565230960662 eV   |
+          | HOMO-LUMO GAP               2.565230960659 eV   |
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2026/03/16 at 12:21:18.157     
+ * finished run on 2026/03/16 at 14:17:45.581     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.185 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.674 sec
- * ratio c/w:     3.636 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.112 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.320 sec
+ * ratio c/w:     2.852 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.068 sec
- *  cpu-time:     0 d,  0 h,  0 min,  0.202 sec
- * ratio c/w:     2.967 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.085 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.222 sec
+ * ratio c/w:     2.621 speedup
 
 
 -------------------------   --------------------
@@ -525,7 +525,7 @@ CARTESIAN GRADIENT
   16   I   :    0.000000161    0.000000059    0.000000003
 
 Difference to translation invariance:
-           :   -0.0000000000    0.0000000000   -0.0000000000
+           :    0.0000000000    0.0000000000    0.0000000000
 
 Difference to rotation invariance:
            :    0.0000002342    0.0000001042   -0.0000001955
@@ -600,7 +600,7 @@ Convergence thresholds                0.002000  0.000500
    15       -21.149605   -30.336985    0.001603  0.000529
    16       -21.149721   -30.409214    0.001436  0.000541
    17       -21.149760   -30.433973    0.001368  0.000520
-   18       -21.149811   -30.465824    0.001303  0.000435
+   18       -21.149811   -30.465823    0.001303  0.000435
 
                       ***********************HURRAY********************
                       ***            THE IRC HAS CONVERGED          ***
@@ -628,7 +628,7 @@ Convergence thresholds                0.002000  0.000500
    12       -21.125728   -15.353599    0.004243  0.001435
    13       -21.126385   -15.766076    0.004269  0.001379
    14       -21.126990   -16.145279    0.003658  0.001446
-   15       -21.127242   -16.303755    0.003739  0.001375
+   15       -21.127242   -16.303754    0.003739  0.001375
    16       -21.127516   -16.475777    0.003697  0.001166
    17       -21.127814   -16.662713    0.003599  0.001134
    18       -21.128102   -16.843101    0.003450  0.001101
@@ -649,7 +649,7 @@ Step        E(Eh)      dE(kcal/mol)  max(|G|)   RMS(G)
    2       -21.128102   -16.843101    0.003450  0.001101
    3       -21.127814   -16.662713    0.003599  0.001134
    4       -21.127516   -16.475777    0.003697  0.001166
-   5       -21.127242   -16.303755    0.003739  0.001375
+   5       -21.127242   -16.303754    0.003739  0.001375
    6       -21.126990   -16.145279    0.003658  0.001446
    7       -21.126385   -15.766076    0.004269  0.001379
    8       -21.125728   -15.353599    0.004243  0.001435
@@ -684,7 +684,7 @@ Step        E(Eh)      dE(kcal/mol)  max(|G|)   RMS(G)
   37       -21.149605   -30.336985    0.001603  0.000529
   38       -21.149721   -30.409214    0.001436  0.000541
   39       -21.149760   -30.433973    0.001368  0.000520
-  40       -21.149811   -30.465824    0.001303  0.000435
+  40       -21.149811   -30.465823    0.001303  0.000435
 
 --------------------------------
 SUGGESTED CITATIONS FOR THIS RUN
@@ -757,7 +757,7 @@ List of optional additional citations
 
 Timings for individual modules:
 
-Sum of individual times          ...       13.419 sec (=   0.224 min)
-XTB module                       ...       13.419 sec (=   0.224 min) 100.0 %
+Sum of individual times          ...       29.252 sec (=   0.488 min)
+XTB module                       ...       29.252 sec (=   0.488 min) 100.0 %
                              ****ORCA TERMINATED NORMALLY****
-TOTAL RUN TIME: 0 days 0 hours 0 minutes 17 seconds 620 msec
+TOTAL RUN TIME: 0 days 0 hours 0 minutes 31 seconds 245 msec
